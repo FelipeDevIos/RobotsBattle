@@ -15,6 +15,7 @@
 		0E720527292C52D2001E8159 /* Prize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E720526292C52D2001E8159 /* Prize.swift */; };
 		0E720529292C5307001E8159 /* BattleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E720528292C5307001E8159 /* BattleCell.swift */; };
 		0E72052C292C58B4001E8159 /* DistanceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E72052B292C58B4001E8159 /* DistanceCalculator.swift */; };
+		0E72052E292C6E87001E8159 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E72052D292C6E87001E8159 /* Position.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		0E720526292C52D2001E8159 /* Prize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prize.swift; sourceTree = "<group>"; };
 		0E720528292C5307001E8159 /* BattleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleCell.swift; sourceTree = "<group>"; };
 		0E72052B292C58B4001E8159 /* DistanceCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceCalculator.swift; sourceTree = "<group>"; };
+		0E72052D292C6E87001E8159 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				0E72052B292C58B4001E8159 /* DistanceCalculator.swift */,
+				0E72052D292C6E87001E8159 /* Position.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E72052E292C6E87001E8159 /* Position.swift in Sources */,
 				0E72052C292C58B4001E8159 /* DistanceCalculator.swift in Sources */,
 				0E720529292C5307001E8159 /* BattleCell.swift in Sources */,
 				0E720527292C52D2001E8159 /* Prize.swift in Sources */,
