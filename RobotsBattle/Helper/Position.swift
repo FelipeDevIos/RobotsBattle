@@ -35,6 +35,29 @@ extension Position {
         
         return x && y
     }
+    
+    func oppositePosition() -> Position {
+        return Position(x: shuffle(value: self.x), y: shuffle(value: self.y))
+    }
+    
+    func shuffle(value: Int) -> Int {
+        if value == 1 {
+            return 7
+        } else {
+            return 1
+        }
+    }
+}
+
+extension Position {
+    enum Ranges {
+        static let robot = [1, 7]
+        static let prize = Array(1...7)
+    }
+    
+    static func generatePosition(for range: [Int]) -> Position {
+        Position(x: range.randomElement() ?? 1, y: range.randomElement() ?? 1)
+    }
 }
 
 struct AvailableCell: BattleCell {

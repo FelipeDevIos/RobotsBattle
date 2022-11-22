@@ -8,26 +8,19 @@
 import Cocoa
 
 class ViewController: NSViewController {
+    let game = Game()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let prize = Prize(position: Position(x: 2, y: 4))
-        let robot1 = Robot(position: Position(x: 1, y: 7), totalWins: 0)
-        let robot2 = Robot(position: Position(x: 7, y: 1), totalWins: 0)
+        let prize = game.prize
+        let robot1 = game.robot1
+        let robot2 = game.robot2
         
-        print(Distance.Calculator(origin: robot1.position, target: prize.position))
-        print(Distance.Calculator(origin: robot2.position, target: prize.position))
-        
-        robot1.nextCells().forEach {
-            print($0.location)
-        }
-        
-        robot2.nextCells().forEach {
-            print($0.location)
-        }
-        
-//        findingBestPath(for: robot1, to: prize)
-//        findingBestPath(for: robot2, to: prize)
+        print(prize, robot1, robot2)
+
+        findingBestPath(for: robot1, to: prize)
+        findingBestPath(for: robot2, to: prize)
         
         print(findingBestNextCell(for: robot1, to: prize))
         print(findingBestNextCell(for: robot2, to: prize))
