@@ -48,7 +48,6 @@
 		0E720508292C51F1001E8159 = {
 			isa = PBXGroup;
 			children = (
-				0E98F749292D045D007DFEC6 /* Game.swift */,
 				0E720513292C51F1001E8159 /* RobotsBattle */,
 				0E720512292C51F1001E8159 /* Products */,
 			);
@@ -65,6 +64,7 @@
 		0E720513292C51F1001E8159 /* RobotsBattle */ = {
 			isa = PBXGroup;
 			children = (
+				0E98F749292D045D007DFEC6 /* Game.swift */,
 				0E72052A292C5897001E8159 /* Helper */,
 				0E720523292C520A001E8159 /* Models */,
 				0E720514292C51F1001E8159 /* AppDelegate.swift */,

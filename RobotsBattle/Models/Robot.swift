@@ -44,3 +44,40 @@ extension Robot {
         return next
     }
 }
+
+extension Robot {
+    func findingBestNextCell(to target: Prize) -> Robot {
+        var deltaDistance = Double(Int.max)
+        var nextRobot = self
+        
+        self.nextCells().forEach {
+            if Distance.Calculator(origin: $0.position, target: target.position) < deltaDistance {
+                deltaDistance = Distance.Calculator(origin: $0.position, target: target.position)
+                nextRobot = Robot(position: $0.position, totalWins: 0)
+            }
+        }
+        
+        return nextRobot
+    }
+    
+    func findingBestPath(for robot: Robot, to target: Prize) {
+        guard Distance.Calculator(origin: robot.position, target: target.position) != 0 else {
+            print("Final", robot.position)
+            return
+        }
+
+        var deltaDistance = Double(Int.max)
+        var nextRobot = robot
+
+        print(nextRobot.position)
+
+        robot.nextCells().forEach {
+            if Distance.Calculator(origin: $0.position, target: target.position) < deltaDistance {
+                deltaDistance = Distance.Calculator(origin: $0.position, target: target.position)
+                nextRobot = Robot(position: $0.position, totalWins: 0)
+            }
+        }
+        
+        findingBestPath(for: nextRobot, to: target)
+    }
+}
