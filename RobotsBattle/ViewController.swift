@@ -26,9 +26,11 @@ class ViewController: NSViewController {
             print($0.location)
         }
         
-        findingBestPath(for: robot1, to: prize)
+//        findingBestPath(for: robot1, to: prize)
+//        findingBestPath(for: robot2, to: prize)
         
-        findingBestPath(for: robot2, to: prize)
+        print(findingBestNextCell(for: robot1, to: prize))
+        print(findingBestNextCell(for: robot2, to: prize))
     }
     
     func findingBestPath(for robot: Robot, to target: Prize) {
@@ -50,6 +52,20 @@ class ViewController: NSViewController {
         }
         
         findingBestPath(for: nextRobot, to: target)
+    }
+    
+    func findingBestNextCell(for robot: Robot, to target: Prize) -> Robot {
+        var deltaDistance = Double(Int.max)
+        var nextRobot = robot
+        
+        robot.nextCells().forEach {
+            if Distance.Calculator(origin: $0.position, target: target.position) < deltaDistance {
+                deltaDistance = Distance.Calculator(origin: $0.position, target: target.position)
+                nextRobot = Robot(position: $0.position, totalWins: 0)
+            }
+        }
+        
+        return nextRobot
     }
 }
 
