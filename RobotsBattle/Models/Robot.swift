@@ -14,23 +14,31 @@ struct Robot: BattleCell {
 }
 
 extension Robot {
-    func nextCells() -> [Position] {
-        var next = [Position]()
+    func nextCells() -> [AvailableCell] {
+        var next = [AvailableCell]()
         
         if self.position.upper().available() {
-            next.append(self.position.upper())
+            next.append(AvailableCell(
+                position: self.position.upper(),
+                location: .upper))
         }
         
         if self.position.left().available() {
-            next.append(self.position.left())
+            next.append(AvailableCell(
+                position: self.position.left(),
+                location: .left))
         }
         
         if self.position.lower().available() {
-            next.append(self.position.lower())
+            next.append(AvailableCell(
+                position: self.position.lower(),
+                location: .lower))
         }
         
         if self.position.right().available() {
-            next.append(self.position.right())
+            next.append(AvailableCell(
+                position: self.position.right(),
+                location: .right))
         }
         
         return next

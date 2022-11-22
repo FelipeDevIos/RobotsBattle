@@ -36,3 +36,15 @@ extension Position {
         return x && y
     }
 }
+
+struct AvailableCell: BattleCell {
+    var position: Position
+    var location: PositionLabel
+}
+
+enum PositionLabel {
+    case upper
+    case left
+    case right
+    case lower
+}

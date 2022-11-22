@@ -19,7 +19,11 @@ class ViewController: NSViewController {
         print(Distance.Calculator(origin: robot2.position, target: prize.position))
         
         robot1.nextCells().forEach {
-            print($0)
+            print($0.location)
+        }
+        
+        robot2.nextCells().forEach {
+            print($0.location)
         }
     }
 }
