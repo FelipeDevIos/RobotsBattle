@@ -19,19 +19,7 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eu2-a8-Bz8">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aI8-Bw-p34">
-                                <rect key="frame" x="99" y="54" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
-                        <constraints>
-                            <constraint firstItem="aI8-Bw-p34" firstAttribute="centerX" secondItem="eu2-a8-Bz8" secondAttribute="centerX" id="EMt-DG-RkP"/>
-                            <constraint firstItem="aI8-Bw-p34" firstAttribute="centerY" secondItem="eu2-a8-Bz8" secondAttribute="centerY" id="k63-cv-zfH"/>
-                        </constraints>
                     </view>
                 </subviews>
                 <constraints>
@@ -44,7 +32,6 @@
             <size key="customSize" width="240" height="128"/>
             <connections>
                 <outlet property="backView" destination="eu2-a8-Bz8" id="9lk-Cc-dXK"/>
-                <outlet property="testLabel" destination="aI8-Bw-p34" id="Ckf-b0-7QZ"/>
             </connections>
             <point key="canvasLocation" x="145.03816793893128" y="42.253521126760567"/>
         </collectionViewCell>

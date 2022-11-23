@@ -8,9 +8,10 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var resetGame: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let game = Game()
+    var game = Game()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,11 @@ class ViewController: UIViewController {
         
         print(robot1.findingBestNextCell(to: prize))
         print(robot2.findingBestNextCell(to: prize))
+    }
+    
+    @IBAction func resetGameTapped(_ sender: Any) {
+        game = Game()
+        collectionView.reloadData()
     }
 }
 
@@ -60,7 +66,6 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         case game.robot2.position:
             cellData = BattleCell(position: cellPosition, type: .robot2)
         default:
-            cell.testLabel.text = "\(cellPosition.x) - \(cellPosition.y)"
             cellData = BattleCell(position: cellPosition)
         }
         

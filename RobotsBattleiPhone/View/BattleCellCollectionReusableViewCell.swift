@@ -8,7 +8,6 @@
 import UIKit
 
 class BattleCellCollectionReusableViewCell: UICollectionViewCell {
-    @IBOutlet weak var testLabel: UILabel!
     @IBOutlet weak var backView: UIView!
     
     static var reusableIdentifier: String {
