@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     
     var game = Game()
     var playedCells = [BattleCell]()
+    var onTurn: GameElements = .robot1
+    var timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +38,8 @@ class ViewController: UIViewController {
         playedCells.append(BattleCell(position: game.robot2.position, type: .robot2))
 
         collectionView.reloadData()
-        print(robot1.findingBestNextCell(to: prize))
-        print(robot2.findingBestNextCell(to: prize))
+        
+        timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(plays), userInfo: nil, repeats: true)
     }
     
     @IBAction func resetGameTapped(_ sender: Any) {
@@ -63,6 +65,27 @@ class ViewController: UIViewController {
         if gameOver.result {
             startGame.isUserInteractionEnabled = false
             startGame.setTitle(gameOver.winner.rawValue, for: .normal)
+        }
+    }
+    
+    @objc func plays() {
+        if onTurn == .robot1 {
+            game.robot1 = game.robot1.findingBestNextCell(to: game.prize)
+            playedCells.append(BattleCell(position: game.robot1.position, type: .robot1))
+            onTurn = .robot2
+        } else {
+            game.robot2 = game.robot2.findingBestNextCell(to: game.prize)
+            playedCells.append(BattleCell(position: game.robot2.position, type: .robot2))
+            onTurn = .robot1
+        }
+        
+        collectionView.reloadData()
+        
+        let gameOver = gameOver()
+        if gameOver.result {
+            startGame.isUserInteractionEnabled = false
+            startGame.setTitle(gameOver.winner.rawValue, for: .normal)
+            timer.invalidate()
         }
     }
     
@@ -112,7 +135,7 @@ extension ViewController {
             item.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: inset, bottom: inset, trailing: inset)
             
             // Group
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(fraction))
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(fraction))
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
             
             // Section

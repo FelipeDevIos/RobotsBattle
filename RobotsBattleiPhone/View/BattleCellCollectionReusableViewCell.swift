@@ -24,7 +24,7 @@ class BattleCellCollectionReusableViewCell: UICollectionViewCell {
         case .robot2:
             backView.backgroundColor = UIColor.blue
         default:
-            backView.backgroundColor = UIColor.black
+            backView.backgroundColor = UIColor.lightGray
         }
     }
 }
