@@ -38,11 +38,29 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        49
+        7
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        7
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BattleCellCollectionReusableViewCell", for: indexPath) as? BattleCellCollectionReusableViewCell ?? BattleCellCollectionReusableViewCell()
+        
+        
+        let cellPosition = Position(x: indexPath.section + 1, y: indexPath.item + 1)
+        
+        switch cellPosition {
+        case game.prize.position:
+            cell.testLabel.text = "P"
+        case game.robot1.position:
+            cell.testLabel.text = "R1"
+        case game.robot2.position:
+            cell.testLabel.text = "R2"
+        default:
+            cell.testLabel.text = "\(cellPosition.x) - \(cellPosition.y)"
+        }
         
         return cell
     }
