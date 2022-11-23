@@ -56,7 +56,19 @@ extension Position {
     }
     
     static func generatePosition(for range: [Int]) -> Position {
-        Position(x: range.randomElement() ?? 1, y: range.randomElement() ?? 1)
+        let x = range.randomElement()
+        let y = range.randomElement()
+        
+        if range == Ranges.prize {
+            switch (x, y) {
+            case (1, 1), (7, 7), (1, 7), (7, 1):
+                return Position(x: 4, y: 4)
+            default:
+                return Position(x: x ?? 4, y: y ?? 4)
+            }
+        } else {
+            return Position(x: x ?? 1, y: y ?? 1)
+        }
     }
 }
 
