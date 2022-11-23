@@ -7,35 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E720515292C51F1001E8159 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E720514292C51F1001E8159 /* AppDelegate.swift */; };
-		0E720517292C51F1001E8159 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E720516292C51F1001E8159 /* ViewController.swift */; };
-		0E720519292C51F2001E8159 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E720518292C51F2001E8159 /* Assets.xcassets */; };
-		0E72051C292C51F2001E8159 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E72051A292C51F2001E8159 /* Main.storyboard */; };
-		0E720525292C521D001E8159 /* Robot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E720524292C521D001E8159 /* Robot.swift */; };
-		0E720527292C52D2001E8159 /* Prize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E720526292C52D2001E8159 /* Prize.swift */; };
-		0E720529292C5307001E8159 /* BattleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E720528292C5307001E8159 /* BattleCell.swift */; };
-		0E72052C292C58B4001E8159 /* DistanceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E72052B292C58B4001E8159 /* DistanceCalculator.swift */; };
-		0E72052E292C6E87001E8159 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E72052D292C6E87001E8159 /* Position.swift */; };
-		0E98F74A292D045D007DFEC6 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E98F749292D045D007DFEC6 /* Game.swift */; };
+		0EB34B7F292DA43F00E1198F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB34B7E292DA43F00E1198F /* AppDelegate.swift */; };
+		0EB34B81292DA43F00E1198F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB34B80292DA43F00E1198F /* SceneDelegate.swift */; };
+		0EB34B83292DA43F00E1198F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB34B82292DA43F00E1198F /* ViewController.swift */; };
+		0EB34B86292DA43F00E1198F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EB34B84292DA43F00E1198F /* Main.storyboard */; };
+		0EB34B88292DA43F00E1198F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EB34B87292DA43F00E1198F /* Assets.xcassets */; };
+		0EB34B8B292DA43F00E1198F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EB34B89292DA43F00E1198F /* LaunchScreen.storyboard */; };
+		0EB34B90292DA4A200E1198F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E98F749292D045D007DFEC6 /* Game.swift */; };
+		0EB34B91292DA4AC00E1198F /* DistanceCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E72052B292C58B4001E8159 /* DistanceCalculator.swift */; };
+		0EB34B92292DA4AE00E1198F /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E72052D292C6E87001E8159 /* Position.swift */; };
+		0EB34B93292DA4B200E1198F /* Robot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E720524292C521D001E8159 /* Robot.swift */; };
+		0EB34B94292DA4B500E1198F /* Prize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E720526292C52D2001E8159 /* Prize.swift */; };
+		0EB34B95292DA4BC00E1198F /* BattleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E720528292C5307001E8159 /* BattleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0E720511292C51F1001E8159 /* RobotsBattle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RobotsBattle.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0E720514292C51F1001E8159 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0E720516292C51F1001E8159 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0E720518292C51F2001E8159 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0E72051B292C51F2001E8159 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0E72051D292C51F2001E8159 /* RobotsBattle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RobotsBattle.entitlements; sourceTree = "<group>"; };
 		0E720524292C521D001E8159 /* Robot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Robot.swift; sourceTree = "<group>"; };
 		0E720526292C52D2001E8159 /* Prize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prize.swift; sourceTree = "<group>"; };
 		0E720528292C5307001E8159 /* BattleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleCell.swift; sourceTree = "<group>"; };
 		0E72052B292C58B4001E8159 /* DistanceCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceCalculator.swift; sourceTree = "<group>"; };
 		0E72052D292C6E87001E8159 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		0E98F749292D045D007DFEC6 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		0EB34B7C292DA43E00E1198F /* RobotsBattleiPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RobotsBattleiPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EB34B7E292DA43F00E1198F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0EB34B80292DA43F00E1198F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0EB34B82292DA43F00E1198F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0EB34B85292DA43F00E1198F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0EB34B87292DA43F00E1198F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0EB34B8A292DA43F00E1198F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0EB34B8C292DA43F00E1198F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0E72050E292C51F1001E8159 /* Frameworks */ = {
+		0EB34B79292DA43E00E1198F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -48,7 +52,7 @@
 		0E720508292C51F1001E8159 = {
 			isa = PBXGroup;
 			children = (
-				0E720513292C51F1001E8159 /* RobotsBattle */,
+				0EB34B7D292DA43F00E1198F /* RobotsBattleiPhone */,
 				0E720512292C51F1001E8159 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,24 +60,9 @@
 		0E720512292C51F1001E8159 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0E720511292C51F1001E8159 /* RobotsBattle.app */,
+				0EB34B7C292DA43E00E1198F /* RobotsBattleiPhone.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		0E720513292C51F1001E8159 /* RobotsBattle */ = {
-			isa = PBXGroup;
-			children = (
-				0E98F749292D045D007DFEC6 /* Game.swift */,
-				0E72052A292C5897001E8159 /* Helper */,
-				0E720523292C520A001E8159 /* Models */,
-				0E720514292C51F1001E8159 /* AppDelegate.swift */,
-				0E720516292C51F1001E8159 /* ViewController.swift */,
-				0E720518292C51F2001E8159 /* Assets.xcassets */,
-				0E72051A292C51F2001E8159 /* Main.storyboard */,
-				0E72051D292C51F2001E8159 /* RobotsBattle.entitlements */,
-			);
-			path = RobotsBattle;
 			sourceTree = "<group>";
 		};
 		0E720523292C520A001E8159 /* Models */ = {
@@ -95,24 +84,41 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		0EB34B7D292DA43F00E1198F /* RobotsBattleiPhone */ = {
+			isa = PBXGroup;
+			children = (
+				0E98F749292D045D007DFEC6 /* Game.swift */,
+				0E72052A292C5897001E8159 /* Helper */,
+				0E720523292C520A001E8159 /* Models */,
+				0EB34B7E292DA43F00E1198F /* AppDelegate.swift */,
+				0EB34B80292DA43F00E1198F /* SceneDelegate.swift */,
+				0EB34B82292DA43F00E1198F /* ViewController.swift */,
+				0EB34B84292DA43F00E1198F /* Main.storyboard */,
+				0EB34B87292DA43F00E1198F /* Assets.xcassets */,
+				0EB34B89292DA43F00E1198F /* LaunchScreen.storyboard */,
+				0EB34B8C292DA43F00E1198F /* Info.plist */,
+			);
+			path = RobotsBattleiPhone;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0E720510292C51F1001E8159 /* RobotsBattle */ = {
+		0EB34B7B292DA43E00E1198F /* RobotsBattleiPhone */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0E720520292C51F2001E8159 /* Build configuration list for PBXNativeTarget "RobotsBattle" */;
+			buildConfigurationList = 0EB34B8F292DA43F00E1198F /* Build configuration list for PBXNativeTarget "RobotsBattleiPhone" */;
 			buildPhases = (
-				0E72050D292C51F1001E8159 /* Sources */,
-				0E72050E292C51F1001E8159 /* Frameworks */,
-				0E72050F292C51F1001E8159 /* Resources */,
+				0EB34B78292DA43E00E1198F /* Sources */,
+				0EB34B79292DA43E00E1198F /* Frameworks */,
+				0EB34B7A292DA43E00E1198F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = RobotsBattle;
-			productName = RobotsBattle;
-			productReference = 0E720511292C51F1001E8159 /* RobotsBattle.app */;
+			name = RobotsBattleiPhone;
+			productName = RobotsBattleiPhone;
+			productReference = 0EB34B7C292DA43E00E1198F /* RobotsBattleiPhone.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -125,7 +131,7 @@
 				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
-					0E720510292C51F1001E8159 = {
+					0EB34B7B292DA43E00E1198F = {
 						CreatedOnToolsVersion = 14.1;
 					};
 				};
@@ -143,48 +149,58 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0E720510292C51F1001E8159 /* RobotsBattle */,
+				0EB34B7B292DA43E00E1198F /* RobotsBattleiPhone */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0E72050F292C51F1001E8159 /* Resources */ = {
+		0EB34B7A292DA43E00E1198F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E720519292C51F2001E8159 /* Assets.xcassets in Resources */,
-				0E72051C292C51F2001E8159 /* Main.storyboard in Resources */,
+				0EB34B8B292DA43F00E1198F /* LaunchScreen.storyboard in Resources */,
+				0EB34B88292DA43F00E1198F /* Assets.xcassets in Resources */,
+				0EB34B86292DA43F00E1198F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0E72050D292C51F1001E8159 /* Sources */ = {
+		0EB34B78292DA43E00E1198F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E72052E292C6E87001E8159 /* Position.swift in Sources */,
-				0E72052C292C58B4001E8159 /* DistanceCalculator.swift in Sources */,
-				0E720529292C5307001E8159 /* BattleCell.swift in Sources */,
-				0E720527292C52D2001E8159 /* Prize.swift in Sources */,
-				0E720517292C51F1001E8159 /* ViewController.swift in Sources */,
-				0E720525292C521D001E8159 /* Robot.swift in Sources */,
-				0E720515292C51F1001E8159 /* AppDelegate.swift in Sources */,
-				0E98F74A292D045D007DFEC6 /* Game.swift in Sources */,
+				0EB34B94292DA4B500E1198F /* Prize.swift in Sources */,
+				0EB34B95292DA4BC00E1198F /* BattleCell.swift in Sources */,
+				0EB34B91292DA4AC00E1198F /* DistanceCalculator.swift in Sources */,
+				0EB34B83292DA43F00E1198F /* ViewController.swift in Sources */,
+				0EB34B93292DA4B200E1198F /* Robot.swift in Sources */,
+				0EB34B92292DA4AE00E1198F /* Position.swift in Sources */,
+				0EB34B7F292DA43F00E1198F /* AppDelegate.swift in Sources */,
+				0EB34B81292DA43F00E1198F /* SceneDelegate.swift in Sources */,
+				0EB34B90292DA4A200E1198F /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0E72051A292C51F2001E8159 /* Main.storyboard */ = {
+		0EB34B84292DA43F00E1198F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0E72051B292C51F2001E8159 /* Base */,
+				0EB34B85292DA43F00E1198F /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0EB34B89292DA43F00E1198F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0EB34B8A292DA43F00E1198F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -303,59 +319,62 @@
 			};
 			name = Release;
 		};
-		0E720521292C51F2001E8159 /* Debug */ = {
+		0EB34B8D292DA43F00E1198F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = RobotsBattle/RobotsBattle.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				INFOPLIST_FILE = RobotsBattleiPhone/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
+					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.felipeV.robotsbattle.RobotsBattle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.felipeV.robotsbattle.RobotsBattleiPhone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = macosx;
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		0E720522292C51F2001E8159 /* Release */ = {
+		0EB34B8E292DA43F00E1198F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = RobotsBattle/RobotsBattle.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				INFOPLIST_FILE = RobotsBattleiPhone/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
+					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.felipeV.robotsbattle.RobotsBattle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.felipeV.robotsbattle.RobotsBattleiPhone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = macosx;
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -371,11 +390,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0E720520292C51F2001E8159 /* Build configuration list for PBXNativeTarget "RobotsBattle" */ = {
+		0EB34B8F292DA43F00E1198F /* Build configuration list for PBXNativeTarget "RobotsBattleiPhone" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0E720521292C51F2001E8159 /* Debug */,
-				0E720522292C51F2001E8159 /* Release */,
+				0EB34B8D292DA43F00E1198F /* Debug */,
+				0EB34B8E292DA43F00E1198F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

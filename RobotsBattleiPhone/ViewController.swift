@@ -1,15 +1,15 @@
 //
 //  ViewController.swift
-//  RobotsBattle
+//  RobotsBattleiPhone
 //
-//  Created by Felipe Velandia  on 21/11/22.
+//  Created by Felipe Velandia  on 22/11/22.
 //
 
-import Cocoa
+import UIKit
 
-class ViewController: NSViewController {
+class ViewController: UIViewController {
     let game = Game()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
