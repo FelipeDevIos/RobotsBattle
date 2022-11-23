@@ -72,7 +72,7 @@ extension Position {
     }
 }
 
-struct AvailableCell: BattleCell {
+struct AvailableCell: Cell {
     var position: Position
     var location: PositionLabel
 }

@@ -43,6 +43,7 @@
             </collectionViewCellContentView>
             <size key="customSize" width="240" height="128"/>
             <connections>
+                <outlet property="backView" destination="eu2-a8-Bz8" id="9lk-Cc-dXK"/>
                 <outlet property="testLabel" destination="aI8-Bw-p34" id="Ckf-b0-7QZ"/>
             </connections>
             <point key="canvasLocation" x="145.03816793893128" y="42.253521126760567"/>

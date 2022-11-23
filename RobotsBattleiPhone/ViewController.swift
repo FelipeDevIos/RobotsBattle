@@ -50,17 +50,21 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         
         
         let cellPosition = Position(x: indexPath.section + 1, y: indexPath.item + 1)
+        var cellData: BattleCell
         
         switch cellPosition {
         case game.prize.position:
-            cell.testLabel.text = "P"
+            cellData = BattleCell(position: cellPosition, type: .prize)
         case game.robot1.position:
-            cell.testLabel.text = "R1"
+            cellData = BattleCell(position: cellPosition, type: .robot1)
         case game.robot2.position:
-            cell.testLabel.text = "R2"
+            cellData = BattleCell(position: cellPosition, type: .robot2)
         default:
             cell.testLabel.text = "\(cellPosition.x) - \(cellPosition.y)"
+            cellData = BattleCell(position: cellPosition)
         }
+        
+        cell.configure(with: cellData)
         
         return cell
     }

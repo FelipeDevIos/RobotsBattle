@@ -7,7 +7,6 @@
 
 import Foundation
 
-struct Prize: BattleCell {
+struct Prize: Cell {
     var position: Position
-    var owner: Robot?
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Robot: BattleCell {
+struct Robot: Cell {
     var position: Position
     
     var totalWins: UInt

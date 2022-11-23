@@ -7,6 +7,12 @@
 
 import Foundation
 
+enum GameElements {
+    case prize
+    case robot1
+    case robot2
+}
+
 class Game {
     var prize: Prize
     var robot1: Robot
