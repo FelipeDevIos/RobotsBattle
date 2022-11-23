@@ -7,10 +7,10 @@
 
 import Foundation
 
-enum GameElements {
-    case prize
-    case robot1
-    case robot2
+enum GameElements: String {
+    case prize = "prize"
+    case robot1 = "Robot 1"
+    case robot2 = "Robot 2"
 }
 
 class Game {

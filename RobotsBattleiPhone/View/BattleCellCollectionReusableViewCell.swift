@@ -15,6 +15,7 @@ class BattleCellCollectionReusableViewCell: UICollectionViewCell {
     }
     
     func configure(with model: BattleCell) {
+        
         switch model.type {
         case .prize:
             backView.backgroundColor = UIColor.yellow

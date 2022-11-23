@@ -34,12 +34,22 @@
                                     <action selector="resetGameTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5l2-2H-61i"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGy-Et-WQg">
+                                <rect key="frame" x="147.66666666666666" y="679" width="98" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Next Turn"/>
+                                <connections>
+                                    <action selector="startGameTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T5g-XL-NS4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Yj2-C4-jgT" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="0Du-ur-bXh"/>
                             <constraint firstItem="CcD-QN-GUl" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7O6-tU-Zoz"/>
+                            <constraint firstItem="bGy-Et-WQg" firstAttribute="centerX" secondItem="Yj2-C4-jgT" secondAttribute="centerX" id="Ay2-kE-oVX"/>
+                            <constraint firstItem="bGy-Et-WQg" firstAttribute="top" secondItem="Yj2-C4-jgT" secondAttribute="bottom" constant="27.333333333333371" id="HtQ-mu-mMI"/>
                             <constraint firstItem="Yj2-C4-jgT" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="XBQ-cl-UgO"/>
                             <constraint firstItem="CcD-QN-GUl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="48" id="qQD-vc-rSk"/>
                             <constraint firstItem="Yj2-C4-jgT" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="qvT-E4-7ji"/>
@@ -49,6 +59,7 @@
                     <connections>
                         <outlet property="collectionView" destination="Yj2-C4-jgT" id="XgB-Iq-3y3"/>
                         <outlet property="resetGame" destination="CcD-QN-GUl" id="M7u-YI-6K1"/>
+                        <outlet property="startGame" destination="bGy-Et-WQg" id="MwD-h7-Xfy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

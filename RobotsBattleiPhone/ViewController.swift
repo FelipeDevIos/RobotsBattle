@@ -9,9 +9,11 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var resetGame: UIButton!
+    @IBOutlet weak var startGame: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var game = Game()
+    var playedCells = [BattleCell]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,8 @@ class ViewController: UIViewController {
         collectionView.collectionViewLayout = createCompositionalLayout()
         
         collectionView.register(UINib(nibName: BattleCellCollectionReusableViewCell.reusableIdentifier, bundle: nil), forCellWithReuseIdentifier: BattleCellCollectionReusableViewCell.reusableIdentifier)
+        
+        setUpLogic()
     }
     
     func setUpLogic() {
@@ -27,18 +31,47 @@ class ViewController: UIViewController {
         let robot1 = game.robot1
         let robot2 = game.robot2
         
-        print(prize.position, "\n R1:", robot1.position, "\n R2:",robot2.position)
+        playedCells.append(BattleCell(position: game.prize.position, type: .prize))
+        playedCells.append(BattleCell(position: game.robot1.position, type: .robot1))
+        playedCells.append(BattleCell(position: game.robot2.position, type: .robot2))
 
-        robot1.findingBestPath(for: robot1, to: prize)
-        robot2.findingBestPath(for: robot2, to: prize)
-        
+        collectionView.reloadData()
         print(robot1.findingBestNextCell(to: prize))
         print(robot2.findingBestNextCell(to: prize))
     }
     
     @IBAction func resetGameTapped(_ sender: Any) {
         game = Game()
+        playedCells.removeAll()
+        setUpLogic()
         collectionView.reloadData()
+        
+        startGame.isUserInteractionEnabled = true
+        startGame.setTitle("Next Move", for: .normal)
+    }
+
+    @IBAction func startGameTapped(_ sender: Any) {
+        game.robot1 = game.robot1.findingBestNextCell(to: game.prize)
+        playedCells.append(BattleCell(position: game.robot1.position, type: .robot1))
+        
+        game.robot2 = game.robot2.findingBestNextCell(to: game.prize)
+        playedCells.append(BattleCell(position: game.robot2.position, type: .robot2))
+
+        collectionView.reloadData()
+        
+        let gameOver = gameOver()
+        if gameOver.result {
+            startGame.isUserInteractionEnabled = false
+            startGame.setTitle(gameOver.winner.rawValue, for: .normal)
+        }
+    }
+    
+    func gameOver() -> (result: Bool, winner: GameElements) {
+        let robot1 = game.robot1.position == game.prize.position
+        let robot2 = game.robot2.position == game.prize.position
+        let winner = robot1 ? GameElements.robot1 : robot2 ? GameElements.robot2 : GameElements.prize
+        
+        return (robot1 || robot2, winner)
     }
 }
 
@@ -54,19 +87,11 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BattleCellCollectionReusableViewCell", for: indexPath) as? BattleCellCollectionReusableViewCell ?? BattleCellCollectionReusableViewCell()
         
-        
         let cellPosition = Position(x: indexPath.section + 1, y: indexPath.item + 1)
-        var cellData: BattleCell
+        var cellData: BattleCell = BattleCell(position: cellPosition)
         
-        switch cellPosition {
-        case game.prize.position:
-            cellData = BattleCell(position: cellPosition, type: .prize)
-        case game.robot1.position:
-            cellData = BattleCell(position: cellPosition, type: .robot1)
-        case game.robot2.position:
-            cellData = BattleCell(position: cellPosition, type: .robot2)
-        default:
-            cellData = BattleCell(position: cellPosition)
+        if let playedCell = playedCells.first(where: {$0.position == cellPosition}) {
+            cellData = playedCell
         }
         
         cell.configure(with: cellData)

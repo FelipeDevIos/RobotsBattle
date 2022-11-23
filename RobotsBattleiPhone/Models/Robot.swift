@@ -9,7 +9,6 @@ import Foundation
 
 struct Robot: Cell {
     var position: Position
-    
     var totalWins: UInt
 }
 
