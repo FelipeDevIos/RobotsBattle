@@ -19,6 +19,8 @@
 		0EB34B93292DA4B200E1198F /* Robot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E720524292C521D001E8159 /* Robot.swift */; };
 		0EB34B94292DA4B500E1198F /* Prize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E720526292C52D2001E8159 /* Prize.swift */; };
 		0EB34B95292DA4BC00E1198F /* BattleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E720528292C5307001E8159 /* BattleCell.swift */; };
+		0EB34B98292DA67100E1198F /* BattleCellCollectionReusableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EB34B97292DA67100E1198F /* BattleCellCollectionReusableViewCell.xib */; };
+		0EB34B9A292DA76100E1198F /* BattleCellCollectionReusableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB34B99292DA76100E1198F /* BattleCellCollectionReusableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		0EB34B87292DA43F00E1198F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EB34B8A292DA43F00E1198F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0EB34B8C292DA43F00E1198F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0EB34B97292DA67100E1198F /* BattleCellCollectionReusableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BattleCellCollectionReusableViewCell.xib; sourceTree = "<group>"; };
+		0EB34B99292DA76100E1198F /* BattleCellCollectionReusableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleCellCollectionReusableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 		0EB34B7D292DA43F00E1198F /* RobotsBattleiPhone */ = {
 			isa = PBXGroup;
 			children = (
+				0EB34B96292DA64800E1198F /* View */,
 				0E98F749292D045D007DFEC6 /* Game.swift */,
 				0E72052A292C5897001E8159 /* Helper */,
 				0E720523292C520A001E8159 /* Models */,
@@ -99,6 +104,15 @@
 				0EB34B8C292DA43F00E1198F /* Info.plist */,
 			);
 			path = RobotsBattleiPhone;
+			sourceTree = "<group>";
+		};
+		0EB34B96292DA64800E1198F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0EB34B97292DA67100E1198F /* BattleCellCollectionReusableViewCell.xib */,
+				0EB34B99292DA76100E1198F /* BattleCellCollectionReusableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +176,7 @@
 				0EB34B8B292DA43F00E1198F /* LaunchScreen.storyboard in Resources */,
 				0EB34B88292DA43F00E1198F /* Assets.xcassets in Resources */,
 				0EB34B86292DA43F00E1198F /* Main.storyboard in Resources */,
+				0EB34B98292DA67100E1198F /* BattleCellCollectionReusableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +196,7 @@
 				0EB34B7F292DA43F00E1198F /* AppDelegate.swift in Sources */,
 				0EB34B81292DA43F00E1198F /* SceneDelegate.swift in Sources */,
 				0EB34B90292DA4A200E1198F /* Game.swift in Sources */,
+				0EB34B9A292DA76100E1198F /* BattleCellCollectionReusableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
