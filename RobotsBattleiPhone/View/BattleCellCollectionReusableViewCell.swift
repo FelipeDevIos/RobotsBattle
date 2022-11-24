@@ -9,22 +9,32 @@ import UIKit
 
 class BattleCellCollectionReusableViewCell: UICollectionViewCell {
     @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var imageView: UIImageView!
     
     static var reusableIdentifier: String {
         return String(describing: Self.self)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        backView.backgroundColor = UIColor(named: "cell_background")
+        imageView.image = nil
     }
     
     func configure(with model: BattleCell) {
         
         switch model.type {
         case .prize:
-            backView.backgroundColor = UIColor.yellow
+            imageView.image = UIImage(named: "trophy")
         case .robot1:
-            backView.backgroundColor = UIColor.red
+            imageView.image = UIImage(named: "red_robot")
         case .robot2:
-            backView.backgroundColor = UIColor.blue
+            imageView.image = UIImage(named: "blue_robot")
+        case .capture:
+            imageView.image = UIImage(named: "capture")
         default:
-            backView.backgroundColor = UIColor.lightGray
+            break
         }
     }
 }

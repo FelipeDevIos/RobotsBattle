@@ -1,5 +1,5 @@
 //
-//  BattleCel.swift
+//  BattleCell.swift
 //  RobotsBattleiPhone
 //
 //  Created by Felipe Velandia  on 22/11/22.

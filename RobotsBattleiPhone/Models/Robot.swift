@@ -55,7 +55,7 @@ extension Robot {
                 nextRobot = Robot(position: $0.position, totalWins: 0)
             }
         }
-        
+        print("david next")
         return nextRobot
     }
     

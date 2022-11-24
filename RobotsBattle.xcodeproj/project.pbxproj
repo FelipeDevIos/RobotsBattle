@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E6ED221292EBEF70077AC9C /* Records.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6ED220292EBEF70077AC9C /* Records.swift */; };
 		0EB34B7F292DA43F00E1198F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB34B7E292DA43F00E1198F /* AppDelegate.swift */; };
 		0EB34B81292DA43F00E1198F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB34B80292DA43F00E1198F /* SceneDelegate.swift */; };
 		0EB34B83292DA43F00E1198F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB34B82292DA43F00E1198F /* ViewController.swift */; };
@@ -21,10 +22,11 @@
 		0EB34B95292DA4BC00E1198F /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E720528292C5307001E8159 /* Cell.swift */; };
 		0EB34B98292DA67100E1198F /* BattleCellCollectionReusableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EB34B97292DA67100E1198F /* BattleCellCollectionReusableViewCell.xib */; };
 		0EB34B9A292DA76100E1198F /* BattleCellCollectionReusableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB34B99292DA76100E1198F /* BattleCellCollectionReusableViewCell.swift */; };
-		0EB34B9C292DBFA000E1198F /* BattleCel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB34B9B292DBFA000E1198F /* BattleCel.swift */; };
+		0EB34B9C292DBFA000E1198F /* BattleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB34B9B292DBFA000E1198F /* BattleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E6ED220292EBEF70077AC9C /* Records.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Records.swift; sourceTree = "<group>"; };
 		0E720524292C521D001E8159 /* Robot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Robot.swift; sourceTree = "<group>"; };
 		0E720526292C52D2001E8159 /* Prize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prize.swift; sourceTree = "<group>"; };
 		0E720528292C5307001E8159 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
@@ -41,7 +43,7 @@
 		0EB34B8C292DA43F00E1198F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EB34B97292DA67100E1198F /* BattleCellCollectionReusableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BattleCellCollectionReusableViewCell.xib; sourceTree = "<group>"; };
 		0EB34B99292DA76100E1198F /* BattleCellCollectionReusableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleCellCollectionReusableViewCell.swift; sourceTree = "<group>"; };
-		0EB34B9B292DBFA000E1198F /* BattleCel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleCel.swift; sourceTree = "<group>"; };
+		0EB34B9B292DBFA000E1198F /* BattleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +79,7 @@
 				0E720524292C521D001E8159 /* Robot.swift */,
 				0E720526292C52D2001E8159 /* Prize.swift */,
 				0E720528292C5307001E8159 /* Cell.swift */,
-				0EB34B9B292DBFA000E1198F /* BattleCel.swift */,
+				0EB34B9B292DBFA000E1198F /* BattleCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -87,6 +89,7 @@
 			children = (
 				0E72052B292C58B4001E8159 /* DistanceCalculator.swift */,
 				0E72052D292C6E87001E8159 /* Position.swift */,
+				0E6ED220292EBEF70077AC9C /* Records.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -195,7 +198,8 @@
 				0EB34B91292DA4AC00E1198F /* DistanceCalculator.swift in Sources */,
 				0EB34B83292DA43F00E1198F /* ViewController.swift in Sources */,
 				0EB34B93292DA4B200E1198F /* Robot.swift in Sources */,
-				0EB34B9C292DBFA000E1198F /* BattleCel.swift in Sources */,
+				0EB34B9C292DBFA000E1198F /* BattleCell.swift in Sources */,
+				0E6ED221292EBEF70077AC9C /* Records.swift in Sources */,
 				0EB34B92292DA4AE00E1198F /* Position.swift in Sources */,
 				0EB34B7F292DA43F00E1198F /* AppDelegate.swift in Sources */,
 				0EB34B81292DA43F00E1198F /* SceneDelegate.swift in Sources */,

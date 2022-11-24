@@ -3,7 +3,6 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,26 +18,31 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eu2-a8-Bz8">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                        <color key="backgroundColor" red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3s3-v1-Cxx">
+                        <rect key="frame" x="99.666666666666671" y="44" width="41.000000000000014" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="3s3-v1-Cxx" secondAttribute="height" multiplier="1:1" constant="1" id="NGI-fU-8Td"/>
+                            <constraint firstAttribute="height" constant="40" id="tgZ-c1-GFl"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="eu2-a8-Bz8" firstAttribute="width" secondItem="I8j-DI-8eb" secondAttribute="width" id="HXJ-qG-nI9"/>
                     <constraint firstItem="eu2-a8-Bz8" firstAttribute="height" secondItem="I8j-DI-8eb" secondAttribute="height" id="Ndm-OK-Hrn"/>
+                    <constraint firstItem="3s3-v1-Cxx" firstAttribute="centerY" secondItem="I8j-DI-8eb" secondAttribute="centerY" id="efM-jU-OWK"/>
                     <constraint firstItem="eu2-a8-Bz8" firstAttribute="centerX" secondItem="I8j-DI-8eb" secondAttribute="centerX" id="ksH-9u-MQ1"/>
                     <constraint firstItem="eu2-a8-Bz8" firstAttribute="centerY" secondItem="I8j-DI-8eb" secondAttribute="centerY" id="ocu-QB-ZBr"/>
+                    <constraint firstItem="3s3-v1-Cxx" firstAttribute="centerX" secondItem="I8j-DI-8eb" secondAttribute="centerX" id="zM4-2a-Z2w"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="240" height="128"/>
             <connections>
-                <outlet property="backView" destination="eu2-a8-Bz8" id="9lk-Cc-dXK"/>
+                <outlet property="backView" destination="eu2-a8-Bz8" id="PNe-s0-mAm"/>
+                <outlet property="imageView" destination="3s3-v1-Cxx" id="sjy-xa-B6v"/>
             </connections>
             <point key="canvasLocation" x="145.03816793893128" y="42.253521126760567"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>

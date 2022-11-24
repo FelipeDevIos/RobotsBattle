@@ -11,6 +11,11 @@ enum GameElements: String {
     case prize = "prize"
     case robot1 = "Robot 1"
     case robot2 = "Robot 2"
+    case capture = "capture"
+}
+
+extension GameElements {
+    
 }
 
 class Game {
