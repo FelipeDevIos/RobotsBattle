@@ -9,32 +9,46 @@ import Foundation
 
 struct Robot: Cell {
     var position: Position
-    var totalWins: UInt
+    var path = [BattleCell]()
+    
+    func getTotalSteps() -> Int {
+        path.count
+    }
 }
 
 extension Robot {
-    func nextCells() -> [AvailableCell] {
+    func nextCells(without playedCells: [BattleCell]) -> [AvailableCell] {
         var next = [AvailableCell]()
         
-        if self.position.upper().available() {
+        var pathCell = playedCells
+        
+        if let index = playedCells.firstIndex(where: {$0.type == .prize}) {
+            pathCell.remove(at: index)
+        }
+        
+        var nextCell = BattleCell(position: position.upper())
+        if position.upper().available() && !pathCell.contains(where: {$0.position == nextCell.position}) {
             next.append(AvailableCell(
                 position: self.position.upper(),
                 location: .upper))
         }
         
-        if self.position.left().available() {
+        nextCell = BattleCell(position: position.left())
+        if position.left().available() && !pathCell.contains(where: {$0.position == nextCell.position}) {
             next.append(AvailableCell(
                 position: self.position.left(),
                 location: .left))
         }
         
-        if self.position.lower().available() {
+        nextCell = BattleCell(position: position.lower())
+        if position.lower().available() && !pathCell.contains(where: {$0.position == nextCell.position}) {
             next.append(AvailableCell(
                 position: self.position.lower(),
                 location: .lower))
         }
         
-        if self.position.right().available() {
+        nextCell = BattleCell(position: position.right())
+        if position.right().available() && !pathCell.contains(where: {$0.position == nextCell.position}) {
             next.append(AvailableCell(
                 position: self.position.right(),
                 location: .right))
@@ -45,38 +59,40 @@ extension Robot {
 }
 
 extension Robot {
-    func findingBestNextCell(to target: Prize) -> Robot {
+    func findingBestNextCell(using game: Game) -> Position? {
+        guard !nextCells(without: game.playedCells).isEmpty else { return nil }
+
+        let target = game.prize
         var deltaDistance = Double(Int.max)
-        var nextRobot = self
+        var nextPosition = self.position
         
-        nextCells().forEach {
+        nextCells(without: game.playedCells).forEach {
             if Distance.Calculator(origin: $0.position, target: target.position) < deltaDistance {
                 deltaDistance = Distance.Calculator(origin: $0.position, target: target.position)
-                nextRobot = Robot(position: $0.position, totalWins: 0)
+                nextPosition = $0.position
             }
         }
 
-        return nextRobot
+        return nextPosition
     }
     
-    func findingBestPath(for robot: Robot, to target: Prize) {
-        guard Distance.Calculator(origin: robot.position, target: target.position) != 0 else {
-            print("Final", robot.position)
-            return
-        }
-
-        var deltaDistance = Double(Int.max)
-        var nextRobot = robot
-
-        print(nextRobot.position)
-
-        robot.nextCells().forEach {
-            if Distance.Calculator(origin: $0.position, target: target.position) < deltaDistance {
-                deltaDistance = Distance.Calculator(origin: $0.position, target: target.position)
-                nextRobot = Robot(position: $0.position, totalWins: 0)
-            }
-        }
-        
-        findingBestPath(for: nextRobot, to: target)
-    }
+//    func findingBestPath(for robot: Robot, to target: Prize) {
+//        guard Distance.Calculator(origin: robot.position, target: target.position) != 0 else {
+//            return
+//        }
+//
+//        var deltaDistance = Double(Int.max)
+//        var nextRobot = robot
+//
+//        print(nextRobot.position)
+//
+//        robot.nextCells(without: game.playedCells).forEach {
+//            if Distance.Calculator(origin: $0.position, target: target.position) < deltaDistance {
+//                deltaDistance = Distance.Calculator(origin: $0.position, target: target.position)
+//                nextRobot = Robot(position: $0.position)
+//            }
+//        }
+//        
+//        findingBestPath(for: nextRobot, to: target)
+//    }
 }

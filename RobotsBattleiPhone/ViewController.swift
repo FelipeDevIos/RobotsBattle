@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var blueRobotWins: UILabel!
     
     var game = Game()
-    var playedCells = [BattleCell]()
     var onTurn: GameElements = .robot1
     var timer: Timer?
     
@@ -34,10 +33,6 @@ class ViewController: UIViewController {
     
     func setUpLogic() {
         game = Game()
-        playedCells.removeAll()
-        playedCells.append(BattleCell(position: game.prize.position, type: .prize))
-        playedCells.append(BattleCell(position: game.robot1.position, type: .robot1))
-        playedCells.append(BattleCell(position: game.robot2.position, type: .robot2))
 
         collectionView.reloadData()
 //        newLoop.isUserInteractionEnabled = false
@@ -64,15 +59,15 @@ class ViewController: UIViewController {
     
     private func relocatePrize() {
         pauseResumeTimer()
-        if let prizeIndex = playedCells.firstIndex(where: {$0.type == .capture || $0.type == .prize}) {
+        if let prizeIndex = game.playedCells.firstIndex(where: {$0.type == .capture || $0.type == .prize}) {
             let newPrizePosition = Position.generatePosition(for: Position.Ranges.prize)
             
-            guard playedCells.isAValidCell(newPrizePosition) else {
+            guard game.playedCells.isAValidCell(newPrizePosition) else {
                 relocatePrize()
                 return
             }
             
-            playedCells[prizeIndex].position = newPrizePosition
+            game.playedCells[prizeIndex].position = newPrizePosition
             game.prize.position = newPrizePosition
             pauseResumeTimer()
         }
@@ -95,19 +90,34 @@ class ViewController: UIViewController {
     
     @objc func plays() {
         if onTurn == .robot1 {
-            game.robot1 = game.robot1.findingBestNextCell(to: game.prize)
-            playedCells.append(BattleCell(position: game.robot1.position, type: .robot1))
+            guard let nextCell = game.robot1.findingBestNextCell(using: game) else {
+                onTurn = .robot2
+                return
+            }
+            
+            game.robot1.position = nextCell
+            let cell = BattleCell(position: game.robot1.position, type: .robot1)
+            game.playedCells.append(cell)
+            game.robot1.path.append(cell)
+            
             onTurn = .robot2
         } else {
-            game.robot2 = game.robot2.findingBestNextCell(to: game.prize)
-            playedCells.append(BattleCell(position: game.robot2.position, type: .robot2))
+            guard let nextCell = game.robot2.findingBestNextCell(using: game) else {
+                onTurn = .robot1
+                return
+            }
+            game.robot2.position = nextCell
+            let cell = BattleCell(position: game.robot2.position, type: .robot2)
+            game.playedCells.append(cell)
+            game.robot2.path.append(cell)
+            
             onTurn = .robot1
         }
         
         let gameOver = gameOver()
         if gameOver.result {
-            if let prizeIndex = playedCells.firstIndex(where: {$0.type == .prize}) {
-                playedCells[prizeIndex].type = .capture
+            if let prizeIndex = game.playedCells.firstIndex(where: {$0.type == .prize}) {
+                game.playedCells[prizeIndex].type = .capture
             }
             
 //            newLoop.isUserInteractionEnabled = true
@@ -150,7 +160,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         let cellPosition = Position(x: indexPath.section + 1, y: indexPath.item + 1)
         var cellData: BattleCell = BattleCell(position: cellPosition)
         
-        if let playedCell = playedCells.first(where: {$0.position == cellPosition}) {
+        if let playedCell = game.playedCells.first(where: {$0.position == cellPosition}) {
             cellData = playedCell
         }
         
