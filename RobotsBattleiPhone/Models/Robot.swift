@@ -17,7 +17,7 @@ struct Robot: Cell {
 }
 
 extension Robot {
-    func nextCells(without playedCells: [BattleCell]) -> [AvailableCell] {
+    func nextCells(without playedCells: [BattleCell]) -> [AvailableCell]? {
         var next = [AvailableCell]()
         
         var pathCell = playedCells
@@ -54,19 +54,19 @@ extension Robot {
                 location: .right))
         }
         
-        return next
+        return next.isEmpty ? nil : next
     }
 }
 
 extension Robot {
     func findingBestNextCell(using game: Game) -> Position? {
-        guard !nextCells(without: game.playedCells).isEmpty else { return nil }
+        guard let nextCell = nextCells(without: game.playedCells) else { return nil }
 
         let target = game.prize
         var deltaDistance = Double(Int.max)
         var nextPosition = self.position
         
-        nextCells(without: game.playedCells).forEach {
+        nextCell.forEach {
             if Distance.Calculator(origin: $0.position, target: target.position) < deltaDistance {
                 deltaDistance = Distance.Calculator(origin: $0.position, target: target.position)
                 nextPosition = $0.position
