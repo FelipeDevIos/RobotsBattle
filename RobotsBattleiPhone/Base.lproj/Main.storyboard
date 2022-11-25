@@ -15,6 +15,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mq0-Tn-W5J">
+                                <rect key="frame" x="19" y="59" width="132.66666666666666" height="34.333333333333343"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Relocate Prize"/>
+                                <connections>
+                                    <action selector="relocatePrize:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8jc-zX-ti8"/>
+                                </connections>
+                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Yj2-C4-jgT">
                                 <rect key="frame" x="19.666666666666657" y="225.66666666666663" width="353.66666666666674" height="426"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -104,6 +113,8 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Yj2-C4-jgT" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="0Du-ur-bXh"/>
+                            <constraint firstItem="mq0-Tn-W5J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6LZ-Br-WH0"/>
+                            <constraint firstItem="mq0-Tn-W5J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="19" id="N7l-G4-P7x"/>
                             <constraint firstItem="u8K-tf-VuT" firstAttribute="centerX" secondItem="Yj2-C4-jgT" secondAttribute="centerX" id="NXx-B4-HXi"/>
                             <constraint firstItem="apk-Wf-Jl8" firstAttribute="width" secondItem="Yj2-C4-jgT" secondAttribute="width" id="PQP-nB-qx9"/>
                             <constraint firstItem="apk-Wf-Jl8" firstAttribute="top" secondItem="Yj2-C4-jgT" secondAttribute="bottom" constant="20" id="Qkr-ET-mbR"/>

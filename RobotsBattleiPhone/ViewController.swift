@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         playedCells.append(BattleCell(position: game.robot2.position, type: .robot2))
 
         collectionView.reloadData()
-        newLoop.isUserInteractionEnabled = false
+//        newLoop.isUserInteractionEnabled = false
         timer?.invalidate()
         timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(plays), userInfo: nil, repeats: true)
     }
@@ -54,9 +54,35 @@ class ViewController: UIViewController {
     
     @IBAction func newLoopRequested(_ sender: Any) {
         setUpLogic()
+        collectionView.reloadData()
+    }
+    
+    @IBAction func relocatePrize(_ sender: Any) {
+        relocatePrize()
+        collectionView.reloadData()
+    }
+    
+    private func relocatePrize() {
+        pauseResumeTimer()
+        if let prizeIndex = playedCells.firstIndex(where: {$0.type == .capture || $0.type == .prize}) {
+            let newPrizePosition = Position.generatePosition(for: Position.Ranges.prize)
+            
+            guard playedCells.isAValidCell(newPrizePosition) else {
+                relocatePrize()
+                return
+            }
+            
+            playedCells[prizeIndex].position = newPrizePosition
+            game.prize.position = newPrizePosition
+            pauseResumeTimer()
+        }
     }
     
     @IBAction func pauseGame(_ sender: Any) {
+        pauseResumeTimer()
+    }
+    
+    private func pauseResumeTimer() {
         if timer == nil {
             timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(plays), userInfo: nil, repeats: true)
             pauseGame.setTitle("Pause", for: .normal)
@@ -84,7 +110,7 @@ class ViewController: UIViewController {
                 playedCells[prizeIndex].type = .capture
             }
             
-            newLoop.isUserInteractionEnabled = true
+//            newLoop.isUserInteractionEnabled = true
             timer?.invalidate()
             
             redRobotWins.text = "\(Records.shared.robot1Wins) Wins"

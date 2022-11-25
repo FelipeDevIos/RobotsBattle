@@ -49,13 +49,13 @@ extension Robot {
         var deltaDistance = Double(Int.max)
         var nextRobot = self
         
-        self.nextCells().forEach {
+        nextCells().forEach {
             if Distance.Calculator(origin: $0.position, target: target.position) < deltaDistance {
                 deltaDistance = Distance.Calculator(origin: $0.position, target: target.position)
                 nextRobot = Robot(position: $0.position, totalWins: 0)
             }
         }
-        print("david next")
+
         return nextRobot
     }
     

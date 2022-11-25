@@ -23,7 +23,6 @@ class BattleCellCollectionReusableViewCell: UICollectionViewCell {
     }
     
     func configure(with model: BattleCell) {
-        
         switch model.type {
         case .prize:
             imageView.image = UIImage(named: "trophy")

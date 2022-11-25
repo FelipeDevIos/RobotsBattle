@@ -7,7 +7,15 @@
 
 import Foundation
 
-struct BattleCell: Cell {
+struct BattleCell: Cell, Equatable {
     var position: Position
     var type: GameElements?
+}
+
+extension Array where Element == BattleCell {
+    func isAValidCell(_ position: Position) -> Bool {
+        return !self.contains(where: {cell in
+            cell.position == position
+        })
+    }
 }
