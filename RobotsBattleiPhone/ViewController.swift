@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  RobotsBattleiPhone
 //
-//  Created by Felipe Velandia  on 22/11/22.
+//  Created by Anonymous on 22/11/22.
 //
 
 import UIKit
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         
         timer?.invalidate()
         timer = Timer.scheduledTimer(timeInterval: Constants.timeInterval, target: self, selector: #selector(plays), userInfo: nil, repeats: true)
-        winnerImage.image = UIImage(named: "Playing")
+        winnerImage.image = #imageLiteral(resourceName:  "Playing")
     }
     
     @IBAction func resetGameTapped(_ sender: Any) {
@@ -95,8 +95,7 @@ class ViewController: UIViewController {
     @objc func plays() {
         if game.robot1 == nil && game.robot2 == nil {
             timer?.invalidate()
-            redRobotWins.text = "Empate"
-            blueRobotWins.text = "Empate"
+            winnerImage.image = #imageLiteral(resourceName: "draw")
             
             return
         } else if game.onTurn == .robot1 {
@@ -140,9 +139,9 @@ class ViewController: UIViewController {
             
             switch gameOver().winner {
             case .robot1 :
-                winnerImage.image = UIImage(named: "R1_winner")
+                winnerImage.image = #imageLiteral(resourceName:  "R1_winner")
             case .robot2 :
-                winnerImage.image = UIImage(named: "R2_winner")
+                winnerImage.image = #imageLiteral(resourceName:  "R2_winner")
             default: break
             }
         }

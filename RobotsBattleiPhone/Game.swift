@@ -2,7 +2,7 @@
 //  Game.swift
 //  RobotsBattle
 //
-//  Created by Felipe Velandia  on 22/11/22.
+//  Created by Anonymous on 22/11/22.
 //
 
 import Foundation

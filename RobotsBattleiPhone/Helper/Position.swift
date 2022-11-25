@@ -2,7 +2,7 @@
 //  Position.swift
 //  RobotsBattle
 //
-//  Created by Felipe Velandia  on 21/11/22.
+//  Created by Anonymous on 21/11/22.
 //
 
 import Foundation

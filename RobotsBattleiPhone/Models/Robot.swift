@@ -80,24 +80,4 @@ extension Robot {
 
         return nextPosition
     }
-    
-//    func findingBestPath(for robot: Robot, to target: Prize) {
-//        guard Distance.Calculator(origin: robot.position, target: target.position) != 0 else {
-//            return
-//        }
-//
-//        var deltaDistance = Double(Int.max)
-//        var nextRobot = robot
-//
-//        print(nextRobot.position)
-//
-//        robot.nextCells(without: game.playedCells).forEach {
-//            if Distance.Calculator(origin: $0.position, target: target.position) < deltaDistance {
-//                deltaDistance = Distance.Calculator(origin: $0.position, target: target.position)
-//                nextRobot = Robot(position: $0.position)
-//            }
-//        }
-//        
-//        findingBestPath(for: nextRobot, to: target)
-//    }
 }

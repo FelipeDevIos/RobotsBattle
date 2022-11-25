@@ -2,7 +2,7 @@
 //  BattleCellCollectionReusableViewCell.swift
 //  RobotsBattleiPhone
 //
-//  Created by Felipe Velandia  on 22/11/22.
+//  Created by Anonymous on 22/11/22.
 //
 
 import UIKit
@@ -25,13 +25,13 @@ class BattleCellCollectionReusableViewCell: UICollectionViewCell {
     func configure(with model: BattleCell) {
         switch model.type {
         case .prize:
-            imageView.image = UIImage(named: "trophy")
+            imageView.image = #imageLiteral(resourceName:  "trophy")
         case .robot1:
-            imageView.image = UIImage(named: "red_robot")
+            imageView.image = #imageLiteral(resourceName:  "red_robot")
         case .robot2:
-            imageView.image = UIImage(named: "blue_robot")
+            imageView.image = #imageLiteral(resourceName:  "blue_robot")
         case .capture:
-            imageView.image = UIImage(named: "capture")
+            imageView.image = #imageLiteral(resourceName:  "capture")
         default:
             break
         }

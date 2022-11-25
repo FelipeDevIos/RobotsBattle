@@ -2,7 +2,7 @@
 //  Records.swift
 //  RobotsBattleiPhone
 //
-//  Created by Felipe Velandia  on 23/11/22.
+//  Created by Anonymous on 23/11/22.
 //
 
 import Foundation
