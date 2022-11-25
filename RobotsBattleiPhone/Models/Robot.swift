@@ -7,12 +7,17 @@
 
 import Foundation
 
-struct Robot: Cell {
+class Robot: Cell {
     var position: Position
     var path = [BattleCell]()
     
     func getTotalSteps() -> Int {
         path.count
+    }
+    
+    init(position: Position, path: [BattleCell] = [BattleCell]()) {
+        self.position = position
+        self.path = path
     }
 }
 

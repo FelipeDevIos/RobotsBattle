@@ -17,8 +17,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var blueRobotWins: UILabel!
     
     var game = Game()
-    var onTurn: GameElements = .robot1
     var timer: Timer?
+    
+    enum Constants {
+        static let timeInterval: TimeInterval = 1
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +40,7 @@ class ViewController: UIViewController {
         collectionView.reloadData()
 //        newLoop.isUserInteractionEnabled = false
         timer?.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(plays), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: Constants.timeInterval, target: self, selector: #selector(plays), userInfo: nil, repeats: true)
     }
     
     @IBAction func resetGameTapped(_ sender: Any) {
@@ -58,7 +61,6 @@ class ViewController: UIViewController {
     }
     
     private func relocatePrize() {
-        pauseResumeTimer()
         if let prizeIndex = game.playedCells.firstIndex(where: {$0.type == .capture || $0.type == .prize}) {
             let newPrizePosition = Position.generatePosition(for: Position.Ranges.prize)
             
@@ -66,10 +68,9 @@ class ViewController: UIViewController {
                 relocatePrize()
                 return
             }
-            
-            game.playedCells[prizeIndex].position = newPrizePosition
-            game.prize.position = newPrizePosition
-            pauseResumeTimer()
+            let prizeCell = BattleCell(position: newPrizePosition, type: .prize)
+            game.playedCells[prizeIndex] = prizeCell
+            game.prize.position = prizeCell.position
         }
     }
     
@@ -79,7 +80,7 @@ class ViewController: UIViewController {
     
     private func pauseResumeTimer() {
         if timer == nil {
-            timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(plays), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: Constants.timeInterval, target: self, selector: #selector(plays), userInfo: nil, repeats: true)
             pauseGame.setTitle("Pause", for: .normal)
         } else {
             timer?.invalidate()
@@ -89,33 +90,43 @@ class ViewController: UIViewController {
     }
     
     @objc func plays() {
-        if onTurn == .robot1 {
-            guard let nextCell = game.robot1.findingBestNextCell(using: game) else {
-                onTurn = .robot2
+        print("david ", game.onTurn, game.robot1, game.robot2)
+        if game.robot1 == nil && game.robot2 == nil {
+            print("David robot1 y robot2", game.robot1, game.robot2, game.onTurn)
+            timer?.invalidate()
+            redRobotWins.text = "Empate"
+            blueRobotWins.text = "Empate"
+            
+            return
+        } else if game.onTurn == .robot1 {
+            guard let robot1 = game.robot1, let nextCell = game.robot1?.findingBestNextCell(using: game) else {
+                game.robot1 = nil
+                game.onTurn = .robot2
                 return
             }
             
-            game.robot1.position = nextCell
-            let cell = BattleCell(position: game.robot1.position, type: .robot1)
+            robot1.position = nextCell
+            let cell = BattleCell(position: robot1.position, type: .robot1)
             game.playedCells.append(cell)
-            game.robot1.path.append(cell)
-            
-            onTurn = .robot2
-        } else {
-            guard let nextCell = game.robot2.findingBestNextCell(using: game) else {
-                onTurn = .robot1
+            robot1.path.append(cell)
+            game.robot1 = robot1
+            game.onTurn = .robot2
+        } else if game.onTurn == .robot2 {
+            guard let robot2 = game.robot2, let nextCell = robot2.findingBestNextCell(using: game) else {
+                game.robot2 = nil
+                game.onTurn = .robot1
                 return
             }
-            game.robot2.position = nextCell
-            let cell = BattleCell(position: game.robot2.position, type: .robot2)
-            game.playedCells.append(cell)
-            game.robot2.path.append(cell)
             
-            onTurn = .robot1
+            robot2.position = nextCell
+            let cell = BattleCell(position: robot2.position, type: .robot2)
+            game.playedCells.append(cell)
+            robot2.path.append(cell)
+            game.robot2 = robot2
+            game.onTurn = .robot1
         }
         
-        let gameOver = gameOver()
-        if gameOver.result {
+        if gameOver().result {
             if let prizeIndex = game.playedCells.firstIndex(where: {$0.type == .prize}) {
                 game.playedCells[prizeIndex].type = .capture
             }
@@ -131,8 +142,8 @@ class ViewController: UIViewController {
     }
     
     func gameOver() -> (result: Bool, winner: GameElements) {
-        let robot1 = game.robot1.position == game.prize.position
-        let robot2 = game.robot2.position == game.prize.position
+        let robot1 = game.robot1?.position == game.prize.position
+        let robot2 = game.robot2?.position == game.prize.position
         let winner = robot1 ? GameElements.robot1 : robot2 ? GameElements.robot2 : GameElements.prize
         
         switch winner {

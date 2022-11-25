@@ -20,9 +20,10 @@ extension GameElements {
 
 class Game {
     var prize: Prize
-    var robot1: Robot
-    var robot2: Robot
-    var playedCells: [BattleCell]
+    var robot1: Robot?
+    var robot2: Robot?
+    var playedCells = [BattleCell]()
+    var onTurn: GameElements = .robot1
     
     init() {
         prize = Prize(position: Position.generatePosition(for: Position.Ranges.prize))
@@ -31,9 +32,10 @@ class Game {
         robot1 = Robot(position: robotPosition)
         robot2 = Robot(position: robotPosition.oppositePosition())
         
-        playedCells = [BattleCell]()
+        guard let r1 = robot1, let r2 = robot2 else { return }
+        
         playedCells.append(BattleCell(position: prize.position, type: .prize))
-        playedCells.append(BattleCell(position: robot1.position, type: .robot1))
-        playedCells.append(BattleCell(position: robot2.position, type: .robot2))
+        playedCells.append(BattleCell(position: r1.position, type: .robot1))
+        playedCells.append(BattleCell(position: r2.position, type: .robot2))
     }
 }
