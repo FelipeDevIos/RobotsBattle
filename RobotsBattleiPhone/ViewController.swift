@@ -11,6 +11,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var resetGame: UIButton!
     @IBOutlet weak var newLoop: UIButton!
     @IBOutlet weak var pauseGame: UIButton!
+    @IBOutlet weak var winnerImage: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var redRobotWins: UILabel!
@@ -20,7 +21,7 @@ class ViewController: UIViewController {
     var timer: Timer?
     
     enum Constants {
-        static let timeInterval: TimeInterval = 1
+        static let timeInterval: TimeInterval = 0.8
     }
     
     override func viewDidLoad() {
@@ -38,9 +39,10 @@ class ViewController: UIViewController {
         game = Game()
 
         collectionView.reloadData()
-//        newLoop.isUserInteractionEnabled = false
+        
         timer?.invalidate()
         timer = Timer.scheduledTimer(timeInterval: Constants.timeInterval, target: self, selector: #selector(plays), userInfo: nil, repeats: true)
+        winnerImage.image = UIImage(named: "Playing")
     }
     
     @IBAction func resetGameTapped(_ sender: Any) {
@@ -61,17 +63,18 @@ class ViewController: UIViewController {
     }
     
     private func relocatePrize() {
-        if let prizeIndex = game.playedCells.firstIndex(where: {$0.type == .capture || $0.type == .prize}) {
-            let newPrizePosition = Position.generatePosition(for: Position.Ranges.prize)
-            
-            guard game.playedCells.isAValidCell(newPrizePosition) else {
-                relocatePrize()
-                return
-            }
-            let prizeCell = BattleCell(position: newPrizePosition, type: .prize)
-            game.playedCells[prizeIndex] = prizeCell
-            game.prize.position = prizeCell.position
+        guard let prizeIndex = game.playedCells.firstIndex(where: {$0.type == .prize}) else { return }
+
+        let newPrizePosition = Position.generatePosition(for: Position.Ranges.prize)
+        
+        guard game.playedCells.isAValidCell(newPrizePosition) else {
+            relocatePrize()
+            return
         }
+        
+        let prizeCell = BattleCell(position: newPrizePosition, type: .prize)
+        game.playedCells[prizeIndex].position = newPrizePosition
+        game.prize.position = prizeCell.position
     }
     
     @IBAction func pauseGame(_ sender: Any) {
@@ -90,9 +93,7 @@ class ViewController: UIViewController {
     }
     
     @objc func plays() {
-        print("david ", game.onTurn, game.robot1, game.robot2)
         if game.robot1 == nil && game.robot2 == nil {
-            print("David robot1 y robot2", game.robot1, game.robot2, game.onTurn)
             timer?.invalidate()
             redRobotWins.text = "Empate"
             blueRobotWins.text = "Empate"
@@ -136,6 +137,14 @@ class ViewController: UIViewController {
             
             redRobotWins.text = "\(Records.shared.robot1Wins) Wins"
             blueRobotWins.text = "\(Records.shared.robot2Wins) Wins"
+            
+            switch gameOver().winner {
+            case .robot1 :
+                winnerImage.image = UIImage(named: "R1_winner")
+            case .robot2 :
+                winnerImage.image = UIImage(named: "R2_winner")
+            default: break
+            }
         }
         
         collectionView.reloadData()
