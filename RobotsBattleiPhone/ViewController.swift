@@ -67,25 +67,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func relocatePrize(_ sender: Any) {
-        relocatePrize()
+        game.relocatePrize()
         collectionView.reloadData()
-    }
-    
-    private func relocatePrize() {
-        guard let prizeIndex = game.playedCells.firstIndex(where: {$0.type == .prize}) else { return }
-
-        let newPrizePosition = Position.generatePosition(for: Position.Ranges.prize)
-        
-        guard game.playedCells.isAValidCell(newPrizePosition) else {
-            relocatePrize()
-            return
-        }
-        
-        let prizeCell = BattleCell(position: newPrizePosition, type: .prize)
-        game.playedCells[prizeIndex].position = newPrizePosition
-        game.prize.position = prizeCell.position
-        
-        Records.shared.addPrizeRelocation()
     }
     
     @IBAction func pauseGame(_ sender: Any) {

@@ -38,6 +38,7 @@ class Records {
         setUp()
         gameResets = 0
         gameDraws = 0
+        prizeRelocations = 0
     }
     
     func setUp() {

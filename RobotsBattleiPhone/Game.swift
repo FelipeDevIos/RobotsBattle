@@ -37,6 +37,23 @@ class Game {
 }
 
 extension Game {
+    func relocatePrize() {
+        guard let prizeIndex = playedCells.firstIndex(where: {$0.type == .prize}) else { return }
+
+        let newPrizePosition = Position.generatePosition(for: Position.Ranges.prize)
+        
+        guard playedCells.isAValidCell(newPrizePosition) else {
+            relocatePrize()
+            return
+        }
+        
+        let prizeCell = BattleCell(position: newPrizePosition, type: .prize)
+        playedCells[prizeIndex].position = newPrizePosition
+        prize.position = prizeCell.position
+        
+        Records.shared.addPrizeRelocation()
+    }
+    
     func gameOver() -> (result: Bool, winner: GameElements) {
         let robot1 = robot1?.position == prize.position
         let robot2 = robot2?.position == prize.position
