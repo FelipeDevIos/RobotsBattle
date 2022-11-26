@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var resetGame: UIButton!
     @IBOutlet weak var newLoop: UIButton!
+    @IBOutlet weak var relocatePrizeButton: UIButton!
     @IBOutlet weak var pauseGame: UIButton!
     @IBOutlet weak var winnerImage: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -43,6 +44,8 @@ class ViewController: UIViewController {
         timer?.invalidate()
         timer = Timer.scheduledTimer(timeInterval: Constants.timeInterval, target: self, selector: #selector(plays), userInfo: nil, repeats: true)
         winnerImage.image = #imageLiteral(resourceName:  "Playing")
+        
+        settingControl(enable: false, newLoop)
     }
     
     @IBAction func resetGameTapped(_ sender: Any) {
@@ -130,8 +133,7 @@ class ViewController: UIViewController {
             if let prizeIndex = game.playedCells.firstIndex(where: {$0.type == .prize}) {
                 game.playedCells[prizeIndex].type = .capture
             }
-            
-//            newLoop.isUserInteractionEnabled = true
+
             timer?.invalidate()
             
             redRobotWins.text = "\(Records.shared.robot1Wins) Wins"
@@ -144,9 +146,16 @@ class ViewController: UIViewController {
                 winnerImage.image = #imageLiteral(resourceName:  "R2_winner")
             default: break
             }
+
+            settingControl(enable: true, newLoop)
         }
         
         collectionView.reloadData()
+    }
+    
+    func settingControl(enable: Bool, _ button: UIButton) {
+        button.isUserInteractionEnabled = enable
+        button.isEnabled = enable
     }
     
     func gameOver() -> (result: Bool, winner: GameElements) {

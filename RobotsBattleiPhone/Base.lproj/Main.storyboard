@@ -28,11 +28,11 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="9Jo-VQ-7vi">
                                         <rect key="frame" x="0.0" y="0.0" width="266.33333333333331" height="34.333333333333336"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGy-Et-WQg">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="bGy-Et-WQg">
                                                 <rect key="frame" x="0.0" y="0.0" width="132.66666666666666" height="34.333333333333336"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="tinted" title="New loop"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <buttonConfiguration key="configuration" style="tinted" title="New loop" cornerStyle="medium"/>
                                                 <connections>
                                                     <action selector="newLoopRequested:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ro4-Sj-xlS"/>
                                                 </connections>
@@ -40,8 +40,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CcD-QN-GUl">
                                                 <rect key="frame" x="133.66666666666669" y="0.0" width="132.66666666666669" height="34.333333333333336"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="tinted" title="Restart Game"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Restart Game"/>
+                                                <buttonConfiguration key="configuration" style="tinted" title="Restart Game" cornerStyle="medium"/>
                                                 <connections>
                                                     <action selector="resetGameTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5l2-2H-61i"/>
                                                 </connections>
@@ -54,8 +55,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mq0-Tn-W5J">
                                                 <rect key="frame" x="0.0" y="0.0" width="132.66666666666666" height="34.333333333333336"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="tinted" title="Relocate Prize"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Relocate Prize"/>
+                                                <buttonConfiguration key="configuration" style="tinted" title="Relocate Prize" cornerStyle="medium"/>
                                                 <connections>
                                                     <action selector="relocatePrize:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8jc-zX-ti8"/>
                                                 </connections>
@@ -63,8 +65,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tG1-0Z-vlo">
                                                 <rect key="frame" x="133.66666666666669" y="0.0" width="132.66666666666669" height="34.333333333333336"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="tinted" title="Pause"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Pause"/>
+                                                <buttonConfiguration key="configuration" style="tinted" title="Pause" cornerStyle="medium"/>
                                                 <connections>
                                                     <action selector="pauseGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hpz-8w-xmD"/>
                                                 </connections>
@@ -148,6 +151,7 @@
                         <outlet property="newLoop" destination="bGy-Et-WQg" id="3Km-lS-aRO"/>
                         <outlet property="pauseGame" destination="tG1-0Z-vlo" id="ida-In-VYB"/>
                         <outlet property="redRobotWins" destination="MPU-z2-22C" id="6AH-HC-fcY"/>
+                        <outlet property="relocatePrizeButton" destination="mq0-Tn-W5J" id="Diy-op-WDA"/>
                         <outlet property="resetGame" destination="CcD-QN-GUl" id="M7u-YI-6K1"/>
                         <outlet property="winnerImage" destination="VeG-dx-gsi" id="o4z-I9-oTb"/>
                     </connections>
