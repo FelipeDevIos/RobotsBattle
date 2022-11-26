@@ -46,13 +46,14 @@ class ViewController: UIViewController {
         winnerImage.image = #imageLiteral(resourceName:  "Playing")
         
         settingControl(enable: false, newLoop)
+        settingControl(enable: true, relocatePrizeButton)
     }
     
     @IBAction func resetGameTapped(_ sender: Any) {
         print("David Robot1", Records.shared.robot1, "\nRobot2", Records.shared.robot2)
         print("David new loop", Records.shared.getGameRounds())
         print("David prize relocations", Records.shared.getPrizeRelocations())
-        
+        print("David draws", Records.shared.getGameDraws())
         setUpLogic()
         
         redRobotWins.text = "\(Records.shared.robot1.totalWins) Wins"
@@ -112,7 +113,9 @@ class ViewController: UIViewController {
         if game.robot1 == nil && game.robot2 == nil {
             timer?.invalidate()
             winnerImage.image = #imageLiteral(resourceName: "draw")
-            
+            Records.shared.addGameDraw()
+            settingControl(enable: false, relocatePrizeButton)
+            settingControl(enable: true, newLoop)
             return
         } else if game.onTurn == .robot1 {
             guard let robot1 = game.robot1, let nextCell = game.robot1?.findingBestNextCell(using: game) else {
@@ -150,6 +153,7 @@ class ViewController: UIViewController {
         if gameOver.result {
             if let prizeIndex = game.playedCells.firstIndex(where: {$0.type == .prize}) {
                 game.playedCells[prizeIndex].type = .capture
+                settingControl(enable: false, relocatePrizeButton)
             }
 
             timer?.invalidate()

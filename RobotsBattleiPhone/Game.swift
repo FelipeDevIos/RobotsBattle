@@ -14,10 +14,6 @@ enum GameElements: String {
     case capture = "capture"
 }
 
-extension GameElements {
-    
-}
-
 class Game {
     var prize: Prize
     var robot1: Robot?

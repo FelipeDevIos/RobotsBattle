@@ -30,12 +30,14 @@ class Records {
     private var gameResets: Int = 0
     private var gameRounds: Int = 0
     private var prizeRelocations: Int = 0
+    private var gameDraws: Int = 0
     
     private init() {}
     
     func restartGame() {
         setUp()
         gameResets = 0
+        gameDraws = 0
     }
     
     func setUp() {
@@ -65,5 +67,13 @@ class Records {
     
     func getPrizeRelocations() -> Int {
         prizeRelocations
+    }
+    
+    func addGameDraw() {
+        gameDraws += 1
+    }
+    
+    func getGameDraws() -> Int {
+        gameDraws
     }
 }
