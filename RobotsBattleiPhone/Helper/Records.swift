@@ -7,16 +7,63 @@
 
 import Foundation
 
+struct RobotForMetrics {
+    var totalWins = 0
+    var totalSteps = 0
+    
+    mutating func addingWin() {
+        totalWins += 1
+    }
+    
+    mutating func addingSteps() {
+        totalSteps += 1
+    }
+}
+
+
 class Records {
     static let shared = Records()
     
+    var robot1 = RobotForMetrics()
+    var robot2 = RobotForMetrics()
+    
+    private var gameResets: Int = 0
+    private var gameRounds: Int = 0
+    private var prizeRelocations: Int = 0
+    
     private init() {}
     
-    var robot1Wins: Int = 0
-    var robot2Wins: Int = 0
-    
     func restartGame() {
-        robot1Wins = 0
-        robot2Wins = 0
+        setUp()
+        gameResets = 0
+    }
+    
+    func setUp() {
+        robot1 = RobotForMetrics()
+        robot2 = RobotForMetrics()
+    }
+    
+    func addGameRounds() {
+        gameRounds += 1
+    }
+    
+    func getGameRounds() -> Int {
+        gameRounds
+    }
+    
+    func addGameResets() {
+        gameResets += 1
+    }
+    
+    func getGameResets() -> Int {
+        gameResets
+    }
+    
+    func addPrizeRelocation() {
+        prizeRelocations += 1
+    }
+    
+    func getPrizeRelocations() -> Int {
+        prizeRelocations
     }
 }

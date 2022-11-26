@@ -47,8 +47,8 @@ extension Game {
         let winner = robot1 ? GameElements.robot1 : robot2 ? GameElements.robot2 : GameElements.prize
         
         switch winner {
-        case .robot1: Records.shared.robot1Wins += 1
-        case .robot2: Records.shared.robot2Wins += 1
+        case .robot1: Records.shared.robot1.addingWin()
+        case .robot2: Records.shared.robot2.addingWin()
         default: break
         }
         

@@ -49,15 +49,26 @@ class ViewController: UIViewController {
     }
     
     @IBAction func resetGameTapped(_ sender: Any) {
+        print("David Robot1", Records.shared.robot1, "\nRobot2", Records.shared.robot2)
+        print("David new loop", Records.shared.getGameRounds())
+        print("David prize relocations", Records.shared.getPrizeRelocations())
+        
         setUpLogic()
+        
+        redRobotWins.text = "\(Records.shared.robot1.totalWins) Wins"
+        blueRobotWins.text = "\(Records.shared.robot2.totalWins) Wins"
+        
         Records.shared.restartGame()
-        redRobotWins.text = "\(Records.shared.robot1Wins) Wins"
-        blueRobotWins.text = "\(Records.shared.robot2Wins) Wins"
+        Records.shared.addGameResets()
+        print("David resets", Records.shared.getGameResets())
     }
     
     @IBAction func newLoopRequested(_ sender: Any) {
         setUpLogic()
         collectionView.reloadData()
+        
+        Records.shared.addGameRounds()
+        print("David new loop", Records.shared.getGameRounds())
     }
     
     @IBAction func relocatePrize(_ sender: Any) {
@@ -78,6 +89,8 @@ class ViewController: UIViewController {
         let prizeCell = BattleCell(position: newPrizePosition, type: .prize)
         game.playedCells[prizeIndex].position = newPrizePosition
         game.prize.position = prizeCell.position
+        
+        Records.shared.addPrizeRelocation()
     }
     
     @IBAction func pauseGame(_ sender: Any) {
@@ -114,6 +127,8 @@ class ViewController: UIViewController {
             robot1.path.append(cell)
             game.robot1 = robot1
             game.onTurn = .robot2
+            
+            Records.shared.robot1.addingSteps()
         } else if game.onTurn == .robot2 {
             guard let robot2 = game.robot2, let nextCell = robot2.findingBestNextCell(using: game) else {
                 game.robot2 = nil
@@ -127,6 +142,8 @@ class ViewController: UIViewController {
             robot2.path.append(cell)
             game.robot2 = robot2
             game.onTurn = .robot1
+            
+            Records.shared.robot2.addingSteps()
         }
         
         let gameOver = game.gameOver()
@@ -137,17 +154,19 @@ class ViewController: UIViewController {
 
             timer?.invalidate()
             
-            redRobotWins.text = "\(Records.shared.robot1Wins) Wins"
-            blueRobotWins.text = "\(Records.shared.robot2Wins) Wins"
-            
             switch gameOver.winner {
             case .robot1 :
+                game.robot1?.wins += 1
                 winnerImage.image = #imageLiteral(resourceName:  "R1_winner")
             case .robot2 :
+                game.robot2?.wins += 1
                 winnerImage.image = #imageLiteral(resourceName:  "R2_winner")
             default: break
             }
-
+            
+            redRobotWins.text = "\(Records.shared.robot1.totalWins) Wins"
+            blueRobotWins.text = "\(Records.shared.robot2.totalWins) Wins"
+            
             settingControl(enable: true, newLoop)
         }
         
