@@ -189,8 +189,8 @@ extension ViewController {
     func createCompositionalLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout {(_, _) -> NSCollectionLayoutSection? in
             let fractionWidth: CGFloat = 1 / 7
-            let fractionHeight: CGFloat = 1 / 8
-            let inset: CGFloat = 1
+            let fractionHeight: CGFloat = 1 / 7
+            let inset: CGFloat = 0.5
             
             // Item
             let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(fractionWidth), heightDimension: .fractionalHeight(1))
