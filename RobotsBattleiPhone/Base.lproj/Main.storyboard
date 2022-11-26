@@ -32,7 +32,8 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="132.66666666666666" height="34.333333333333336"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <buttonConfiguration key="configuration" style="tinted" title="New loop" cornerStyle="medium"/>
+                                                <state key="normal" title="New loop"/>
+                                                <buttonConfiguration key="configuration" style="gray" title="New loop"/>
                                                 <connections>
                                                     <action selector="newLoopRequested:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ro4-Sj-xlS"/>
                                                 </connections>
@@ -42,7 +43,7 @@
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Restart Game"/>
-                                                <buttonConfiguration key="configuration" style="tinted" title="Restart Game" cornerStyle="medium"/>
+                                                <buttonConfiguration key="configuration" style="gray" title="Restart Game" cornerStyle="medium"/>
                                                 <connections>
                                                     <action selector="resetGameTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5l2-2H-61i"/>
                                                 </connections>
@@ -57,7 +58,7 @@
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Relocate Prize"/>
-                                                <buttonConfiguration key="configuration" style="tinted" title="Relocate Prize" cornerStyle="medium"/>
+                                                <buttonConfiguration key="configuration" style="gray" title="Relocate Prize" cornerStyle="medium"/>
                                                 <connections>
                                                     <action selector="relocatePrize:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8jc-zX-ti8"/>
                                                 </connections>
@@ -67,7 +68,7 @@
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Pause"/>
-                                                <buttonConfiguration key="configuration" style="tinted" title="Pause" cornerStyle="medium"/>
+                                                <buttonConfiguration key="configuration" style="gray" title="Pause" cornerStyle="medium"/>
                                                 <connections>
                                                     <action selector="pauseGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hpz-8w-xmD"/>
                                                 </connections>

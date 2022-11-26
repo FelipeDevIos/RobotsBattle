@@ -42,7 +42,6 @@ class Game {
 
 extension Game {
     func gameOver() -> (result: Bool, winner: GameElements) {
-        print("david Game", Records.shared.robot1Wins, Records.shared.robot2Wins)
         let robot1 = robot1?.position == prize.position
         let robot2 = robot2?.position == prize.position
         let winner = robot1 ? GameElements.robot1 : robot2 ? GameElements.robot2 : GameElements.prize
