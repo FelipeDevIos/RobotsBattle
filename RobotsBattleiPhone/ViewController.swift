@@ -50,10 +50,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func resetGameTapped(_ sender: Any) {
-        print("David Robot1", Records.shared.robot1, "\nRobot2", Records.shared.robot2)
-        print("David new loop", Records.shared.getGameRounds())
-        print("David prize relocations", Records.shared.getPrizeRelocations())
-        print("David draws", Records.shared.getGameDraws())
         setUpLogic()
         
         redRobotWins.text = "\(Records.shared.robot1.totalWins) Wins"
@@ -61,7 +57,6 @@ class ViewController: UIViewController {
         
         Records.shared.restartGame()
         Records.shared.addGameResets()
-        print("David resets", Records.shared.getGameResets())
     }
     
     @IBAction func newLoopRequested(_ sender: Any) {
@@ -69,7 +64,6 @@ class ViewController: UIViewController {
         collectionView.reloadData()
         
         Records.shared.addGameRounds()
-        print("David new loop", Records.shared.getGameRounds())
     }
     
     @IBAction func relocatePrize(_ sender: Any) {
