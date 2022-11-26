@@ -129,7 +129,8 @@ class ViewController: UIViewController {
             game.onTurn = .robot1
         }
         
-        if gameOver().result {
+        let gameOver = game.gameOver()
+        if gameOver.result {
             if let prizeIndex = game.playedCells.firstIndex(where: {$0.type == .prize}) {
                 game.playedCells[prizeIndex].type = .capture
             }
@@ -139,7 +140,7 @@ class ViewController: UIViewController {
             redRobotWins.text = "\(Records.shared.robot1Wins) Wins"
             blueRobotWins.text = "\(Records.shared.robot2Wins) Wins"
             
-            switch gameOver().winner {
+            switch gameOver.winner {
             case .robot1 :
                 winnerImage.image = #imageLiteral(resourceName:  "R1_winner")
             case .robot2 :
@@ -156,20 +157,6 @@ class ViewController: UIViewController {
     func settingControl(enable: Bool, _ button: UIButton) {
         button.isUserInteractionEnabled = enable
         button.isEnabled = enable
-    }
-    
-    func gameOver() -> (result: Bool, winner: GameElements) {
-        let robot1 = game.robot1?.position == game.prize.position
-        let robot2 = game.robot2?.position == game.prize.position
-        let winner = robot1 ? GameElements.robot1 : robot2 ? GameElements.robot2 : GameElements.prize
-        
-        switch winner {
-        case .robot1: Records.shared.robot1Wins += 1
-        case .robot2: Records.shared.robot2Wins += 1
-        default: break
-        }
-        
-        return (robot1 || robot2, winner)
     }
 }
 

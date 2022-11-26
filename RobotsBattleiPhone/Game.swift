@@ -39,3 +39,20 @@ class Game {
         playedCells.append(BattleCell(position: r2.position, type: .robot2))
     }
 }
+
+extension Game {
+    func gameOver() -> (result: Bool, winner: GameElements) {
+        print("david Game", Records.shared.robot1Wins, Records.shared.robot2Wins)
+        let robot1 = robot1?.position == prize.position
+        let robot2 = robot2?.position == prize.position
+        let winner = robot1 ? GameElements.robot1 : robot2 ? GameElements.robot2 : GameElements.prize
+        
+        switch winner {
+        case .robot1: Records.shared.robot1Wins += 1
+        case .robot2: Records.shared.robot2Wins += 1
+        default: break
+        }
+        
+        return (robot1 || robot2, winner)
+    }
+}
