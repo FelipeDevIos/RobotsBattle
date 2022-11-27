@@ -67,6 +67,15 @@ extension Position {
     func shuffle(value: Int) -> Int {
         value == 1 ? boardLimits.max : boardLimits.min
     }
+    
+    /// Determines if the prize has a valid empty position
+    /// - Parameter position: current cell position
+    /// - Returns: true/false in consequence
+    func isAValidPrizePosition(on playedCells: [BattleCell]) -> Bool {
+        return !playedCells.contains(where: {cell in
+            cell.position == self
+        })
+    }
 }
 
 extension Position {
