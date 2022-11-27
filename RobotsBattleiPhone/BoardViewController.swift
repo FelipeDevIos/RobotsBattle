@@ -40,6 +40,8 @@ class BoardViewController: UIViewController {
         setUpLogic()
     }
     
+    /// Resets game
+    /// - Parameter sender: UI button
     @IBAction func resetGameTapped(_ sender: Any) {
         setUpLogic()
         
@@ -51,17 +53,23 @@ class BoardViewController: UIViewController {
         showScores()
     }
     
+    /// Requests new loop for game
+    /// - Parameter sender: UI Button
     @IBAction func newLoopRequested(_ sender: Any) {
         setUpLogic()
         
         Records.shared.addGameRounds()
     }
     
+    /// Relocates the prize
+    /// - Parameter sender: UI Button
     @IBAction func relocatePrize(_ sender: Any) {
         game.relocatePrize()
         collectionView.reloadData()
     }
     
+    /// Pauses the game
+    /// - Parameter sender: UI Button
     @IBAction func pauseGame(_ sender: Any) {
         pauseResumeTimer()
     }

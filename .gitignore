@@ -15,13 +15,14 @@ xcuserdata/\
 *.xcodeproj/*\
 !*.xcodeproj/project.pbxproj\
 !*.xcodeproj/xcshareddata/\
-!*.xcworkspace/contents.xcworkspacedata\
-!*.xcworkspace/xcuserdata/*\
 /*.gcno\
 !*
 \f1\fs22 \cf2 \CocoaLigature0 .xcuserdatad/UserInterfaceState.xcuserstate
 \f0\fs24 \cf0 \CocoaLigature1 \
 **/xcshareddata/WorkspaceSettings.xcsettings\
-\
+!*
+\f1\fs22 \cf2 \CocoaLigature0 .xcuserstate\
+
+\f0\fs24 \cf0 \CocoaLigature1 \
 # End of https://www.toptal.com/developers/gitignore/api/xcode\
 }

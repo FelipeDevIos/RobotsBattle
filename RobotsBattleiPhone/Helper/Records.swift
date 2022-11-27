@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Data Object to gather analytics
 struct RobotForMetrics {
     var totalWins = 0
     var totalSteps = 0
@@ -19,7 +20,6 @@ struct RobotForMetrics {
         totalSteps += 1
     }
 }
-
 
 class Records {
     static let shared = Records()
@@ -34,6 +34,7 @@ class Records {
     
     private init() {}
     
+    /// Restarts related analitycs
     func restartGame() {
         setUp()
         gameResets = 0
@@ -41,11 +42,13 @@ class Records {
         prizeRelocations = 0
     }
     
+    /// Sets up the analytics objects
     func setUp() {
         robot1 = RobotForMetrics()
         robot2 = RobotForMetrics()
     }
     
+    // MARK: Game rounds
     func addGameRounds() {
         gameRounds += 1
     }
@@ -54,6 +57,7 @@ class Records {
         gameRounds
     }
     
+    // MARK: Game resets
     func addGameResets() {
         gameResets += 1
     }
@@ -62,6 +66,7 @@ class Records {
         gameResets
     }
     
+    // MARK: Game prize relocations
     func addPrizeRelocation() {
         prizeRelocations += 1
     }
@@ -70,6 +75,7 @@ class Records {
         prizeRelocations
     }
     
+    // MARK: Game draws
     func addGameDraw() {
         gameDraws += 1
     }

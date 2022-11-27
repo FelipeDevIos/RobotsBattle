@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Representation of each available cell
 enum PositionLabel {
     case upper
     case left
@@ -14,28 +15,39 @@ enum PositionLabel {
     case lower
 }
 
+/// object coordinate
 struct Position: Equatable {
     var x: Int
     var y: Int
 }
 
 extension Position {
+    /// Upper cell
+    /// - Returns: Position
     func upper() -> Position {
         Position(x: self.x, y: self.y - 1)
     }
     
+    /// Left cell
+    /// - Returns: Position
     func left() -> Position {
         Position(x: self.x - 1, y: self.y)
     }
     
+    /// Right cell
+    /// - Returns: Position
     func right() -> Position {
         Position(x: self.x + 1, y: self.y)
     }
     
+    /// Lower cell
+    /// - Returns: Position
     func lower() -> Position {
         Position(x: self.x, y: self.y + 1)
     }
     
+    /// Evaluates if the cell is inside into the board limits
+    /// - Returns: true if the cell is inside the board
     func available() -> Bool {
         let x = self.x >= boardLimits.min && self.x <= boardLimits.max
         let y = self.y >= boardLimits.min && self.y <= boardLimits.max
@@ -43,25 +55,30 @@ extension Position {
         return x && y
     }
     
+    /// Returns the opposite position for a robot
+    /// - Returns: New opposite position
     func oppositePosition() -> Position {
         return Position(x: shuffle(value: self.x), y: shuffle(value: self.y))
     }
     
+    /// Shuffles the value of the original coordinate between board limits
+    /// - Parameter value: point of coordinate
+    /// - Returns: shuffled point
     func shuffle(value: Int) -> Int {
-        if value == 1 {
-            return boardLimits.max
-        } else {
-            return boardLimits.min
-        }
+        value == 1 ? boardLimits.max : boardLimits.min
     }
 }
 
 extension Position {
+    /// Ranges for game elements
     enum Ranges {
         static let robot = [boardLimits.min, boardLimits.max]
         static let prize = Array(boardLimits.min...boardLimits.max)
     }
     
+    /// Generate position for game elements
+    /// - Parameter range: element range
+    /// - Returns: position for element
     static func generatePosition(for range: [Int]) -> Position {
         let x = range.randomElement()
         let y = range.randomElement()

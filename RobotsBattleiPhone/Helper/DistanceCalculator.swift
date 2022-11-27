@@ -8,6 +8,12 @@
 import Foundation
 
 class Distance {
+    /// Distance calculator between robots and target based on Pythagoras theorem using coordinates for each
+    /// element under evaluation
+    /// - Parameters:
+    ///   - origin: initial object
+    ///   - target: final object
+    /// - Returns: The distance between the objects
     static func Calculator(origin: Position, target: Position) -> Double {
         let deltaX = Double(target.x - origin.x)
         let deltaY = Double(target.y - origin.y)

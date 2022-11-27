@@ -7,18 +7,25 @@
 
 import Foundation
 
+/// In charge of UI updates
 protocol UpdateViewStateProtocol {
+    /// Updates UI board
     func updateBoard()
+    /// Upadates winner scores
     func updateScores()
+    /// Updates winner images
+    /// - Parameter image: WinImages type to be shown
     func showWinner(with image: WinImages)
+    /// Sets new statwe of desired button
+    /// - Parameters:
+    ///   - enable: enables/disables button
+    ///   - button: desired button
     func setButton(enable: Bool, button: AvailableButtons)
 }
 
-protocol GameStates {
-    func drawGame()
-}
-
+/// Timmer bridge
 protocol TimeManageProtocol {
+    /// Invalidates timmer for turns
     func invalidateTime()
 }
 
@@ -34,7 +41,6 @@ class Game {
     var onTurn: GameElements = .robot1
     
     var updateViewDelegate: UpdateViewStateProtocol?
-    var gameStateDelegate: GameStates?
     var timeManageDelegate: TimeManageProtocol?
     
     init() {

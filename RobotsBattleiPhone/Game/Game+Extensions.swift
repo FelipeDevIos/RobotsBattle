@@ -7,18 +7,22 @@
 
 import Foundation
 
+/// Data object representing view buttons that change their state
 enum AvailableButtons {
     case newLoop
     case relocatePrizeButton
     case pauseResume
 }
 
+/// Images to be shown on screen result spot
 enum WinImages: String {
     case blueRobot = "R2_winner"
     case redRobot = "R1_winner"
     case draw = "draw"
 }
 
+
+/// Data object representing game elements
 enum GameElements: String {
     case prize = "prize"
     case robot1 = "Robot 1"
@@ -27,6 +31,7 @@ enum GameElements: String {
 }
 
 extension Game {
+    /// Get new position for the prize
     func relocatePrize() {
         guard let prizeIndex = playedCells.firstIndex(where: {$0.type == .prize}) else { return }
 
@@ -44,13 +49,16 @@ extension Game {
         Records.shared.addPrizeRelocation()
     }
     
+    /// Setting view when there is a final game state as draw or finished
     func configEndStateView() {
         updateViewDelegate?.setButton(enable: false, button: .relocatePrizeButton)
         updateViewDelegate?.setButton(enable: true, button: .newLoop)
         updateViewDelegate?.setButton(enable: false, button: .pauseResume)
     }
     
+    /// Called everi time interval to evaluate robots and prize position and update game state
     @objc func plays() {
+        /// Draw case
         if robot1 == nil && robot2 == nil {
             timeManageDelegate?.invalidateTime()
 
@@ -59,6 +67,7 @@ extension Game {
             
             Records.shared.addGameDraw()
             return
+        /// Robot 1 on turn
         } else if onTurn == .robot1 {
             guard let robot1 = robot1, let nextCell = robot1.findingBestNextCell(using: self) else {
                 robot1 = nil
@@ -74,6 +83,7 @@ extension Game {
             onTurn = .robot2
             
             Records.shared.robot1.addingSteps()
+        /// Robot 2 on turn
         } else if onTurn == .robot2 {
             guard let robot2 = robot2, let nextCell = robot2.findingBestNextCell(using: self) else {
                 robot2 = nil
@@ -92,6 +102,8 @@ extension Game {
         }
         
         let gameOver = gameOver()
+        
+        /// Evaluating if there is a winner on current game state
         if gameOver.result {
             if let prizeIndex = playedCells.firstIndex(where: {$0.type == .prize}) {
                 playedCells[prizeIndex].type = .capture
@@ -116,6 +128,8 @@ extension Game {
         updateViewDelegate?.updateBoard()
     }
     
+    /// Evaluates if there is a winner
+    /// - Returns: Tupple with result for winner and the winner
     func gameOver() -> (result: Bool, winner: GameElements) {
         let robot1 = robot1?.position == prize.position
         let robot2 = robot2?.position == prize.position

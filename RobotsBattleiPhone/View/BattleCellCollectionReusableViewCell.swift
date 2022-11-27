@@ -11,6 +11,7 @@ class BattleCellCollectionReusableViewCell: UICollectionViewCell {
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     
+    /// Images for UI game state representation
     enum Constants {
         static let trophy = "trophy"
         static let redRobot = "red_robot"
@@ -29,6 +30,8 @@ class BattleCellCollectionReusableViewCell: UICollectionViewCell {
         imageView.image = nil
     }
     
+    /// Configures the cell's UI
+    /// - Parameter model: BattleCell represnting each cell data
     func configure(with model: BattleCell) {
         switch model.type {
         case .prize:
