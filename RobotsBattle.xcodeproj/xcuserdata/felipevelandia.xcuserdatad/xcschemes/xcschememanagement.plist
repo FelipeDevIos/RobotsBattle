@@ -14,9 +14,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>RobotsBattleiPhoneTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0E8492EC2933AF1200FD1E17</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>0EB34B7B292DA43E00E1198F</key>
 		<dict>
 			<key>primary</key>

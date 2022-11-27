@@ -1,4 +1,4 @@
-# RobotsBattle
+## README
 
 Relocation based on the Pythagorean theorem
 
@@ -18,3 +18,8 @@ Possible cells:
          | x, y+1 |
          |        |
          ----------
+
+
+For complete commit reviewing process please visit:
+
+https://github.com/FelipeDevIos/RobotsBattle
