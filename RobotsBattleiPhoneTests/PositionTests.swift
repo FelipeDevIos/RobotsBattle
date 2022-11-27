@@ -1,14 +1,14 @@
 //
-//  RobotsBattleiPhoneTests.swift
-//  RobotsBattleiPhoneTests
+//  Anonymous.swift
+// Anonymous
 //
-//  Created by Felipe Velandia  on 27/11/22.
+//  Created by Anonymous on 27/11/22.
 //
 
 import XCTest
 @testable import RobotsBattleiPhone
 
-final class RobotsBattleiPhoneTests: XCTestCase {
+final class PositionTests: XCTestCase {
     func test_cellToIndex() {
         let position = Position(x: 3, y: 5)
         let cell = BattleCell(position: position)
@@ -53,4 +53,30 @@ final class RobotsBattleiPhoneTests: XCTestCase {
         
         XCTAssertNotNil(position)
     }
+    
+    func test_robotPositionIsOnBoard() {
+        let prizeRange = Position.Ranges.robot
+        let position = Position.generatePosition(for: prizeRange)
+        
+        XCTAssertNotNil(position)
+    }
+    
+    func test_prizePositionsIsAlwaysOnBoardNoMatterBoardSize() {
+        let newBoardLimits = (min: 1, max: 3)
+        
+        let prizeRange = Array(newBoardLimits.min...newBoardLimits.max)
+        let position = Position.generatePosition(for: prizeRange)
+        
+        XCTAssertNotNil(position)
+    }
+    
+    func test_robotPositionsIsAlwaysOnBoardNoMatterBoardSize() {
+        let newBoardLimits = (min: 1, max: 3)
+        
+        let prizeRange = [newBoardLimits.min, newBoardLimits.max]
+        let position = Position.generatePosition(for: prizeRange)
+        
+        XCTAssertNotNil(position)
+    }
+    
 }

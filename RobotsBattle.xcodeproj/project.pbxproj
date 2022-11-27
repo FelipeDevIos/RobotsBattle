@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E4052602933BB2300D32A74 /* RobotTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E40525F2933BB2300D32A74 /* RobotTest.swift */; };
 		0E6ED221292EBEF70077AC9C /* Records.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6ED220292EBEF70077AC9C /* Records.swift */; };
-		0E8492F02933AF1200FD1E17 /* RobotsBattleiPhoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8492EF2933AF1200FD1E17 /* RobotsBattleiPhoneTests.swift */; };
+		0E8492F02933AF1200FD1E17 /* PositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8492EF2933AF1200FD1E17 /* PositionTests.swift */; };
 		0EB34B7F292DA43F00E1198F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB34B7E292DA43F00E1198F /* AppDelegate.swift */; };
 		0EB34B81292DA43F00E1198F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB34B80292DA43F00E1198F /* SceneDelegate.swift */; };
 		0EB34B83292DA43F00E1198F /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB34B82292DA43F00E1198F /* BoardViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E40525F2933BB2300D32A74 /* RobotTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotTest.swift; sourceTree = "<group>"; };
 		0E6ED220292EBEF70077AC9C /* Records.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Records.swift; sourceTree = "<group>"; };
 		0E720524292C521D001E8159 /* Robot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Robot.swift; sourceTree = "<group>"; };
 		0E720526292C52D2001E8159 /* Prize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prize.swift; sourceTree = "<group>"; };
@@ -46,7 +48,7 @@
 		0E72052B292C58B4001E8159 /* DistanceCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceCalculator.swift; sourceTree = "<group>"; };
 		0E72052D292C6E87001E8159 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		0E8492ED2933AF1200FD1E17 /* RobotsBattleiPhoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RobotsBattleiPhoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0E8492EF2933AF1200FD1E17 /* RobotsBattleiPhoneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotsBattleiPhoneTests.swift; sourceTree = "<group>"; };
+		0E8492EF2933AF1200FD1E17 /* PositionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionTests.swift; sourceTree = "<group>"; };
 		0E98F749292D045D007DFEC6 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		0EB34B7C292DA43E00E1198F /* RobotsBattleiPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RobotsBattleiPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EB34B7E292DA43F00E1198F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,7 +125,8 @@
 		0E8492EE2933AF1200FD1E17 /* RobotsBattleiPhoneTests */ = {
 			isa = PBXGroup;
 			children = (
-				0E8492EF2933AF1200FD1E17 /* RobotsBattleiPhoneTests.swift */,
+				0E8492EF2933AF1200FD1E17 /* PositionTests.swift */,
+				0E40525F2933BB2300D32A74 /* RobotTest.swift */,
 			);
 			path = RobotsBattleiPhoneTests;
 			sourceTree = "<group>";
@@ -267,7 +270,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E8492F02933AF1200FD1E17 /* RobotsBattleiPhoneTests.swift in Sources */,
+				0E4052602933BB2300D32A74 /* RobotTest.swift in Sources */,
+				0E8492F02933AF1200FD1E17 /* PositionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
