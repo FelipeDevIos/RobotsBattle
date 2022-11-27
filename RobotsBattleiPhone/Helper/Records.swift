@@ -28,6 +28,7 @@ enum RecordsKeys: String {
     case gameDraws
     case totalWins
     case totalSteps
+    case gamePauses
 }
 
 class Records {
@@ -40,6 +41,7 @@ class Records {
     private var gameRounds: Int = 0
     private var prizeRelocations: Int = 0
     private var gameDraws: Int = 0
+    private var gamePauses: Int = 0
     
     private init() {}
     
@@ -50,6 +52,7 @@ class Records {
         gameDraws = 0
         prizeRelocations = 0
         gameRounds = 0
+        gamePauses = 0
     }
     
     /// Sets up the analytics objects
@@ -94,6 +97,15 @@ class Records {
         gameDraws
     }
     
+    // MARK: Game draws
+    func addGamePause() {
+        gamePauses += 1
+    }
+    
+    func getGamePauses() -> Int {
+        gamePauses
+    }
+    
     /// Records summary
     /// - Returns: Key value dictionary
     func summary() -> [String: Int] {
@@ -103,6 +115,7 @@ class Records {
         summary.updateValue(gameRounds, forKey: RecordsKeys.gameRounds.rawValue)
         summary.updateValue(prizeRelocations, forKey: RecordsKeys.prizeRelocations.rawValue)
         summary.updateValue(gameDraws, forKey: RecordsKeys.gameDraws.rawValue)
+        summary.updateValue(gamePauses, forKey: RecordsKeys.gamePauses.rawValue)
         
         summary.updateValue(robot1.totalWins, forKey: "Robot1" + RecordsKeys.totalWins.rawValue)
         summary.updateValue(robot1.totalSteps, forKey: "Robot1" + RecordsKeys.totalSteps.rawValue)

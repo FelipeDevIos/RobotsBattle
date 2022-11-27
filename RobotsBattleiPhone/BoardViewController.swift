@@ -76,6 +76,7 @@ class BoardViewController: UIViewController {
     /// - Parameter sender: UI Button
     @IBAction func pauseGame(_ sender: Any) {
         pauseResumeTimer()
+        Records.shared.addGamePause()
     }
 }
 
