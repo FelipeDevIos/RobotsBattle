@@ -23,6 +23,10 @@ class ViewController: UIViewController {
     
     enum Constants {
         static let timeInterval: TimeInterval = 0.8
+        static let wins: String = "Win(s)"
+        static let resume: String = "Resume"
+        static let pause: String = "Pause"
+        static let rows: Int = 7
     }
     
     override func viewDidLoad() {
@@ -38,8 +42,8 @@ class ViewController: UIViewController {
     
     func setUpLogic() {
         game = Game()
-
-        collectionView.reloadData()
+        game.timeManageDelegate = self
+        game.updateViewDelegate =  self
         
         timer?.invalidate()
         timer = Timer.scheduledTimer(timeInterval: Constants.timeInterval, target: self, selector: #selector(plays), userInfo: nil, repeats: true)
@@ -47,21 +51,24 @@ class ViewController: UIViewController {
         
         settingControl(enable: false, newLoop)
         settingControl(enable: true, relocatePrizeButton)
+        settingControl(enable: true, pauseGame)
+        
+        collectionView.reloadData()
     }
     
     @IBAction func resetGameTapped(_ sender: Any) {
         setUpLogic()
         
-        redRobotWins.text = "\(Records.shared.robot1.totalWins) Wins"
-        blueRobotWins.text = "\(Records.shared.robot2.totalWins) Wins"
+        settingControl(enable: true, pauseGame)
         
         Records.shared.restartGame()
         Records.shared.addGameResets()
+        
+        showScores()
     }
     
     @IBAction func newLoopRequested(_ sender: Any) {
         setUpLogic()
-        collectionView.reloadData()
         
         Records.shared.addGameRounds()
     }
@@ -75,98 +82,39 @@ class ViewController: UIViewController {
         pauseResumeTimer()
     }
     
+    private func showScores() {
+        redRobotWins.text = "\(Records.shared.robot1.totalWins) \(Constants.wins)"
+        blueRobotWins.text = "\(Records.shared.robot2.totalWins) \(Constants.wins)"
+    }
+    
     private func pauseResumeTimer() {
         if timer == nil {
             timer = Timer.scheduledTimer(timeInterval: Constants.timeInterval, target: self, selector: #selector(plays), userInfo: nil, repeats: true)
-            pauseGame.setTitle("Pause", for: .normal)
+            pauseGame.setTitle(Constants.pause, for: .normal)
         } else {
             timer?.invalidate()
             timer = nil
-            pauseGame.setTitle("Resume", for: .normal)
+            pauseGame.setTitle(Constants.resume, for: .normal)
         }
-    }
-    
-    @objc func plays() {
-        if game.robot1 == nil && game.robot2 == nil {
-            timer?.invalidate()
-            winnerImage.image = #imageLiteral(resourceName: "draw")
-            Records.shared.addGameDraw()
-            settingControl(enable: false, relocatePrizeButton)
-            settingControl(enable: true, newLoop)
-            return
-        } else if game.onTurn == .robot1 {
-            guard let robot1 = game.robot1, let nextCell = game.robot1?.findingBestNextCell(using: game) else {
-                game.robot1 = nil
-                game.onTurn = .robot2
-                return
-            }
-            
-            robot1.position = nextCell
-            let cell = BattleCell(position: robot1.position, type: .robot1)
-            game.playedCells.append(cell)
-            robot1.path.append(cell)
-            game.robot1 = robot1
-            game.onTurn = .robot2
-            
-            Records.shared.robot1.addingSteps()
-        } else if game.onTurn == .robot2 {
-            guard let robot2 = game.robot2, let nextCell = robot2.findingBestNextCell(using: game) else {
-                game.robot2 = nil
-                game.onTurn = .robot1
-                return
-            }
-            
-            robot2.position = nextCell
-            let cell = BattleCell(position: robot2.position, type: .robot2)
-            game.playedCells.append(cell)
-            robot2.path.append(cell)
-            game.robot2 = robot2
-            game.onTurn = .robot1
-            
-            Records.shared.robot2.addingSteps()
-        }
-        
-        let gameOver = game.gameOver()
-        if gameOver.result {
-            if let prizeIndex = game.playedCells.firstIndex(where: {$0.type == .prize}) {
-                game.playedCells[prizeIndex].type = .capture
-                settingControl(enable: false, relocatePrizeButton)
-            }
-
-            timer?.invalidate()
-            
-            switch gameOver.winner {
-            case .robot1 :
-                game.robot1?.wins += 1
-                winnerImage.image = #imageLiteral(resourceName:  "R1_winner")
-            case .robot2 :
-                game.robot2?.wins += 1
-                winnerImage.image = #imageLiteral(resourceName:  "R2_winner")
-            default: break
-            }
-            
-            redRobotWins.text = "\(Records.shared.robot1.totalWins) Wins"
-            blueRobotWins.text = "\(Records.shared.robot2.totalWins) Wins"
-            
-            settingControl(enable: true, newLoop)
-        }
-        
-        collectionView.reloadData()
     }
     
     func settingControl(enable: Bool, _ button: UIButton) {
         button.isUserInteractionEnabled = enable
         button.isEnabled = enable
     }
+    
+    @objc func plays() {
+        game.plays()
+    }
 }
 
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        7
+        Constants.rows
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        7
+        Constants.rows
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -212,3 +160,37 @@ extension ViewController {
     }
 }
 
+extension ViewController: UpdateViewStateProtocol {
+    func updateBoard() {
+        collectionView.reloadData()
+    }
+    
+    func updateScores() {
+        showScores()
+    }
+    
+    func showWinner(with image: WinImages) {
+        winnerImage.image = UIImage(named: image.rawValue)
+    }
+    
+    func setButton(enable: Bool, button: AvailableButtons) {
+        var control: UIButton
+        
+        switch button {
+        case .newLoop:
+            control = newLoop
+        case .relocatePrizeButton:
+            control = relocatePrizeButton
+        case .pauseResume:
+            control = pauseGame
+        }
+        
+        settingControl(enable: enable, control)
+    }
+}
+
+extension ViewController: TimeManageProtocol {
+    func invalidateTime() {
+        timer?.invalidate()
+    }
+}
