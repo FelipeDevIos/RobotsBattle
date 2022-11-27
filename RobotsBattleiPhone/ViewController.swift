@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         static let wins: String = "Win(s)"
         static let resume: String = "Resume"
         static let pause: String = "Pause"
-        static let rows: Int = 7
+        static let rows: Int = boardBundle.max
     }
     
     override func viewDidLoad() {

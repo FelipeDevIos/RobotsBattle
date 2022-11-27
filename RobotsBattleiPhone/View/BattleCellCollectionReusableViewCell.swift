@@ -11,6 +11,13 @@ class BattleCellCollectionReusableViewCell: UICollectionViewCell {
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     
+    enum Constants {
+        static let trophy = "trophy"
+        static let redRobot = "red_robot"
+        static let blueRobot = "blue_robot"
+        static let capture = "capture"
+    }
+    
     static var reusableIdentifier: String {
         return String(describing: Self.self)
     }
@@ -25,13 +32,13 @@ class BattleCellCollectionReusableViewCell: UICollectionViewCell {
     func configure(with model: BattleCell) {
         switch model.type {
         case .prize:
-            imageView.image = #imageLiteral(resourceName:  "trophy")
+            imageView.image = #imageLiteral(resourceName:  Constants.trophy)
         case .robot1:
-            imageView.image = #imageLiteral(resourceName:  "red_robot")
+            imageView.image = #imageLiteral(resourceName:  Constants.redRobot)
         case .robot2:
-            imageView.image = #imageLiteral(resourceName:  "blue_robot")
+            imageView.image = #imageLiteral(resourceName:  Constants.blueRobot)
         case .capture:
-            imageView.image = #imageLiteral(resourceName:  "capture")
+            imageView.image = #imageLiteral(resourceName:  Constants.capture)
         default:
             break
         }

@@ -147,10 +147,8 @@ extension Game {
             
             switch gameOver.winner {
             case .robot1 :
-                robot1?.wins += 1
                 updateViewDelegate?.showWinner(with: .redRobot)
             case .robot2 :
-                robot2?.wins += 1
                 updateViewDelegate?.showWinner(with: .blueRobot)
             default: break
             }

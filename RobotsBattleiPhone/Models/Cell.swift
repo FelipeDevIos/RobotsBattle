@@ -7,7 +7,7 @@
 
 import Foundation
 
-let bundle = (min: 1, max: 7)
+let boardBundle = (min: 1, max: 7)
 
 protocol Cell {
     var position: Position { get set }

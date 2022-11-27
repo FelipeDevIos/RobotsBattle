@@ -30,8 +30,8 @@ extension Position {
     }
     
     func available() -> Bool {
-        let x = self.x >= bundle.min && self.x <= bundle.max
-        let y = self.y >= bundle.min && self.y <= bundle.max
+        let x = self.x >= boardBundle.min && self.x <= boardBundle.max
+        let y = self.y >= boardBundle.min && self.y <= boardBundle.max
         
         return x && y
     }
@@ -62,7 +62,7 @@ extension Position {
         if range == Ranges.prize {
             switch (x, y) {
             case (1, 1), (7, 7), (1, 7), (7, 1):
-                return Position(x: 4, y: 4)
+                return Position.generatePosition(for: Ranges.prize)
             default:
                 return Position(x: x ?? 4, y: y ?? 4)
             }

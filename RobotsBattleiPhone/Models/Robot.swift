@@ -10,7 +10,7 @@ import Foundation
 class Robot: Cell {
     var position: Position
     var path = [BattleCell]()
-    var wins: Int = 0
+    
     init(position: Position, path: [BattleCell] = [BattleCell]()) {
         self.position = position
         self.path = path
