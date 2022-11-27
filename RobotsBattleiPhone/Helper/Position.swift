@@ -30,8 +30,8 @@ extension Position {
     }
     
     func available() -> Bool {
-        let x = self.x >= boardBundle.min && self.x <= boardBundle.max
-        let y = self.y >= boardBundle.min && self.y <= boardBundle.max
+        let x = self.x >= boardLimits.min && self.x <= boardLimits.max
+        let y = self.y >= boardLimits.min && self.y <= boardLimits.max
         
         return x && y
     }
@@ -42,17 +42,17 @@ extension Position {
     
     func shuffle(value: Int) -> Int {
         if value == 1 {
-            return 7
+            return boardLimits.max
         } else {
-            return 1
+            return boardLimits.min
         }
     }
 }
 
 extension Position {
     enum Ranges {
-        static let robot = [1, 7]
-        static let prize = Array(1...7)
+        static let robot = [boardLimits.min, boardLimits.max]
+        static let prize = Array(boardLimits.min...boardLimits.max)
     }
     
     static func generatePosition(for range: [Int]) -> Position {
@@ -61,13 +61,15 @@ extension Position {
         
         if range == Ranges.prize {
             switch (x, y) {
-            case (1, 1), (7, 7), (1, 7), (7, 1):
+            case (boardLimits.min, boardLimits.min), (boardLimits.max, boardLimits.max),
+                (boardLimits.min, boardLimits.max), (boardLimits.max, boardLimits.min):
                 return Position.generatePosition(for: Ranges.prize)
             default:
-                return Position(x: x ?? 4, y: y ?? 4)
+                let center = Int(ceil(Double(boardLimits.max) / 2.0))
+                return Position(x: x ?? center , y: y ?? center)
             }
         } else {
-            return Position(x: x ?? 1, y: y ?? 1)
+            return Position(x: x ?? boardLimits.min, y: y ?? boardLimits.min)
         }
     }
 }

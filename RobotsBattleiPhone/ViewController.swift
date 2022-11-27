@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         static let wins: String = "Win(s)"
         static let resume: String = "Resume"
         static let pause: String = "Pause"
-        static let rows: Int = boardBundle.max
+        static let rows: Int = boardLimits.max
     }
     
     override func viewDidLoad() {
@@ -136,8 +136,8 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
 extension ViewController {
     func createCompositionalLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout {(_, _) -> NSCollectionLayoutSection? in
-            let fractionWidth: CGFloat = 1 / 7
-            let fractionHeight: CGFloat = 1 / 7
+            let fractionWidth: CGFloat = 1 / CGFloat(Constants.rows)
+            let fractionHeight: CGFloat = 1 / CGFloat(Constants.rows)
             let inset: CGFloat = 0.5
             
             // Item
