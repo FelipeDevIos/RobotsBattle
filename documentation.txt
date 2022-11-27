@@ -1,5 +1,7 @@
 ## README
 
+Build on Xcode 14.1
+
 Relocation based on the Pythagorean theorem
 
 

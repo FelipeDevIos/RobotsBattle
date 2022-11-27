@@ -1,13 +1,14 @@
 # RobotsBattle
 
-Relocation based on the Pythagorean theorem
+Build on Xcode 14.1<br />
 
+Relocation based on the Pythagorean theorem<br />
 
-Possible cells:
+Possible cells:<br />
 
-current cell: (x, y)
-
-Upper: (x, y-1)
-Left: (x-1, y)
-Right: (x+1, y)
-Lower: (x, y+1)
+current cell: (x, y)<br />
+<br />
+Upper: (x, y-1)<br />
+Left: (x-1, y)<br />
+Right: (x+1, y)<br />
+Lower: (x, y+1)<br />
