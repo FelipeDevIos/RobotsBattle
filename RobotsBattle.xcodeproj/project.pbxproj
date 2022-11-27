@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E4052602933BB2300D32A74 /* RobotTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E40525F2933BB2300D32A74 /* RobotTest.swift */; };
+		0E4052602933BB2300D32A74 /* RobotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E40525F2933BB2300D32A74 /* RobotTests.swift */; };
+		0E4052622933C91100D32A74 /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4052612933C91100D32A74 /* GameTests.swift */; };
 		0E6ED221292EBEF70077AC9C /* Records.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6ED220292EBEF70077AC9C /* Records.swift */; };
 		0E8492F02933AF1200FD1E17 /* PositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8492EF2933AF1200FD1E17 /* PositionTests.swift */; };
 		0EB34B7F292DA43F00E1198F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB34B7E292DA43F00E1198F /* AppDelegate.swift */; };
@@ -40,7 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E40525F2933BB2300D32A74 /* RobotTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotTest.swift; sourceTree = "<group>"; };
+		0E40525F2933BB2300D32A74 /* RobotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotTests.swift; sourceTree = "<group>"; };
+		0E4052612933C91100D32A74 /* GameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
 		0E6ED220292EBEF70077AC9C /* Records.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Records.swift; sourceTree = "<group>"; };
 		0E720524292C521D001E8159 /* Robot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Robot.swift; sourceTree = "<group>"; };
 		0E720526292C52D2001E8159 /* Prize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prize.swift; sourceTree = "<group>"; };
@@ -126,7 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				0E8492EF2933AF1200FD1E17 /* PositionTests.swift */,
-				0E40525F2933BB2300D32A74 /* RobotTest.swift */,
+				0E40525F2933BB2300D32A74 /* RobotTests.swift */,
+				0E4052612933C91100D32A74 /* GameTests.swift */,
 			);
 			path = RobotsBattleiPhoneTests;
 			sourceTree = "<group>";
@@ -270,7 +273,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E4052602933BB2300D32A74 /* RobotTest.swift in Sources */,
+				0E4052602933BB2300D32A74 /* RobotTests.swift in Sources */,
+				0E4052622933C91100D32A74 /* GameTests.swift in Sources */,
 				0E8492F02933AF1200FD1E17 /* PositionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

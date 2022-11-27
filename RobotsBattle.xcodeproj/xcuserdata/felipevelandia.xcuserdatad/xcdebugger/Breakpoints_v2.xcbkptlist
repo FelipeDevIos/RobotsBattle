@@ -36,5 +36,84 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5E43C3D7-0FD8-4932-BB5A-1ACD908FD615"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RobotsBattleiPhoneTests/GameTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "test_ifRobotsCantMoveTheGameIsDraw()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5E43C3D7-0FD8-4932-BB5A-1ACD908FD615 - 8b11e778835b8d56"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RobotsBattleiPhoneTests.GameTests.test_ifRobotsCantMoveTheGameIsDraw() -&gt; ()"
+                  moduleName = "RobotsBattleiPhoneTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipevelandia/Desktop/TRIO%20TECH/RobotsBattle/RobotsBattleiPhoneTests/GameTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "708">
+               </Location>
+               <Location
+                  uuid = "5E43C3D7-0FD8-4932-BB5A-1ACD908FD615 - 8b11e778835b8d56"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RobotsBattleiPhoneTests.GameTests.test_ifRobotsCantMoveTheGameIsDraw() -&gt; ()"
+                  moduleName = "RobotsBattleiPhoneTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipevelandia/Desktop/TRIO%20TECH/RobotsBattle/RobotsBattleiPhoneTests/GameTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "616">
+               </Location>
+               <Location
+                  uuid = "5E43C3D7-0FD8-4932-BB5A-1ACD908FD615 - 8b11e778835b8d77"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RobotsBattleiPhoneTests.GameTests.test_ifRobotsCantMoveTheGameIsDraw() -&gt; ()"
+                  moduleName = "RobotsBattleiPhoneTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipevelandia/Desktop/TRIO%20TECH/RobotsBattle/RobotsBattleiPhoneTests/GameTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "632">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6193128E-44E5-4204-89EA-176502DE2EBA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RobotsBattleiPhoneTests/GameTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "test_ifRobotsCantMoveTheGameIsDraw()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

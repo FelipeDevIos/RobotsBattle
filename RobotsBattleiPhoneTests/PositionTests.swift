@@ -79,4 +79,39 @@ final class PositionTests: XCTestCase {
         XCTAssertNotNil(position)
     }
     
+    func test_nonBorderPositionHasFourAvailableCellToMove() {
+        let position = Position(x: 5, y: 5)
+        let robot = Robot(position: position)
+        
+        let availableCells = robot.nextCells(without: [])
+        
+        XCTAssertEqual(availableCells?.count, 4)
+    }
+    
+    func test_cornerPositionHasTwoAvailableCellToMove() {
+        let position = Position(x: 1, y: 1)
+        let robot = Robot(position: position)
+        
+        let availableCells = robot.nextCells(without: [])
+        
+        XCTAssertEqual(availableCells?.count, 2)
+    }
+    
+    func test_borderPositionHasThreeAvailableCellToMove() {
+        let position = Position(x: 5, y: 1)
+        let robot = Robot(position: position)
+        
+        let availableCells = robot.nextCells(without: [])
+        
+        XCTAssertEqual(availableCells?.count, 3)
+    }
+    
+    func test_havingTwoPositionsGettingDirectDistance() {
+        let position1 = Position(x: 1, y: 1)
+        let position2 = Position(x: 1, y: 7)
+        
+        let expectedDistance = 6.0
+        
+        XCTAssertEqual(expectedDistance, Distance.Calculator(origin: position1, target: position2))
+    }
 }
