@@ -7,6 +7,13 @@
 
 import Foundation
 
+enum PositionLabel {
+    case upper
+    case left
+    case right
+    case lower
+}
+
 struct Position: Equatable {
     var x: Int
     var y: Int
@@ -72,16 +79,4 @@ extension Position {
             return Position(x: x ?? boardLimits.min, y: y ?? boardLimits.min)
         }
     }
-}
-
-struct AvailableCell: Cell {
-    var position: Position
-    var location: PositionLabel
-}
-
-enum PositionLabel {
-    case upper
-    case left
-    case right
-    case lower
 }

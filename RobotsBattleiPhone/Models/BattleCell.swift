@@ -7,6 +7,11 @@
 
 import Foundation
 
+struct AvailableCell: Cell {
+    var position: Position
+    var location: PositionLabel
+}
+
 struct BattleCell: Cell, Equatable {
     var position: Position
     var type: GameElements?

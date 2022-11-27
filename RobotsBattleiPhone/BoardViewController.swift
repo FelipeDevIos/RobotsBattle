@@ -40,22 +40,6 @@ class BoardViewController: UIViewController {
         setUpLogic()
     }
     
-    func setUpLogic() {
-        game = Game()
-        game.timeManageDelegate = self
-        game.updateViewDelegate =  self
-        
-        timer?.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: Constants.timeInterval, target: self, selector: #selector(plays), userInfo: nil, repeats: true)
-        winnerImage.image = #imageLiteral(resourceName:  "Playing")
-        
-        settingControl(enable: false, newLoopButton)
-        settingControl(enable: true, relocatePrizeButton)
-        settingControl(enable: true, pauseGameButton)
-        
-        collectionView.reloadData()
-    }
-    
     @IBAction func resetGameTapped(_ sender: Any) {
         setUpLogic()
         
@@ -80,31 +64,6 @@ class BoardViewController: UIViewController {
     
     @IBAction func pauseGame(_ sender: Any) {
         pauseResumeTimer()
-    }
-    
-    private func showScores() {
-        redRobotWinsLabel.text = "\(Records.shared.robot1.totalWins) \(Constants.wins)"
-        blueRobotWinsLabel.text = "\(Records.shared.robot2.totalWins) \(Constants.wins)"
-    }
-    
-    private func pauseResumeTimer() {
-        if timer == nil {
-            timer = Timer.scheduledTimer(timeInterval: Constants.timeInterval, target: self, selector: #selector(plays), userInfo: nil, repeats: true)
-            pauseGameButton.setTitle(Constants.pause, for: .normal)
-        } else {
-            timer?.invalidate()
-            timer = nil
-            pauseGameButton.setTitle(Constants.resume, for: .normal)
-        }
-    }
-    
-    func settingControl(enable: Bool, _ button: UIButton) {
-        button.isUserInteractionEnabled = enable
-        button.isEnabled = enable
-    }
-    
-    @objc func plays() {
-        game.plays()
     }
 }
 
