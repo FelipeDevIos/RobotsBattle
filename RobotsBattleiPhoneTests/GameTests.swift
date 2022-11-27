@@ -2,7 +2,7 @@
 //  GameTests.swift
 //  RobotsBattleiPhoneTests
 //
-//  Created by Felipe Velandia  on 27/11/22.
+//  Created by Anonymous on 27/11/22.
 //
 
 import XCTest
