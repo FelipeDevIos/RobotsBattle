@@ -21,7 +21,7 @@ extension Array where Element == BattleCell {
     /// Determines if the cell has a valid empty position
     /// - Parameter position: current cell position
     /// - Returns: true/false in consequence
-    func isAValidCell(_ position: Position) -> Bool {
+    func isAValidPrizePosition(_ position: Position) -> Bool {
         return !self.contains(where: {cell in
             cell.position == position
         })

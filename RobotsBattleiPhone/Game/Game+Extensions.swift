@@ -37,7 +37,7 @@ extension Game {
 
         let newPrizePosition = Position.generatePosition(for: Position.Ranges.prize)
         
-        guard playedCells.isAValidCell(newPrizePosition) else {
+        guard playedCells.isAValidPrizePosition(newPrizePosition) else {
             relocatePrize()
             return
         }

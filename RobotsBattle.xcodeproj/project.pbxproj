@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E6ED221292EBEF70077AC9C /* Records.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6ED220292EBEF70077AC9C /* Records.swift */; };
+		0E8492F02933AF1200FD1E17 /* RobotsBattleiPhoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8492EF2933AF1200FD1E17 /* RobotsBattleiPhoneTests.swift */; };
 		0EB34B7F292DA43F00E1198F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB34B7E292DA43F00E1198F /* AppDelegate.swift */; };
 		0EB34B81292DA43F00E1198F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB34B80292DA43F00E1198F /* SceneDelegate.swift */; };
 		0EB34B83292DA43F00E1198F /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB34B82292DA43F00E1198F /* BoardViewController.swift */; };
@@ -27,6 +28,16 @@
 		0EBE23252932F94500C3BF9F /* Game+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBE23242932F94500C3BF9F /* Game+Extensions.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0E8492F12933AF1200FD1E17 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E720509292C51F1001E8159 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0EB34B7B292DA43E00E1198F;
+			remoteInfo = RobotsBattleiPhone;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0E6ED220292EBEF70077AC9C /* Records.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Records.swift; sourceTree = "<group>"; };
 		0E720524292C521D001E8159 /* Robot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Robot.swift; sourceTree = "<group>"; };
@@ -34,6 +45,8 @@
 		0E720528292C5307001E8159 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		0E72052B292C58B4001E8159 /* DistanceCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceCalculator.swift; sourceTree = "<group>"; };
 		0E72052D292C6E87001E8159 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		0E8492ED2933AF1200FD1E17 /* RobotsBattleiPhoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RobotsBattleiPhoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E8492EF2933AF1200FD1E17 /* RobotsBattleiPhoneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotsBattleiPhoneTests.swift; sourceTree = "<group>"; };
 		0E98F749292D045D007DFEC6 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		0EB34B7C292DA43E00E1198F /* RobotsBattleiPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RobotsBattleiPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EB34B7E292DA43F00E1198F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +64,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0E8492EA2933AF1200FD1E17 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0EB34B79292DA43E00E1198F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -65,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				0EB34B7D292DA43F00E1198F /* RobotsBattleiPhone */,
+				0E8492EE2933AF1200FD1E17 /* RobotsBattleiPhoneTests */,
 				0E720512292C51F1001E8159 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				0EB34B7C292DA43E00E1198F /* RobotsBattleiPhone.app */,
+				0E8492ED2933AF1200FD1E17 /* RobotsBattleiPhoneTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,6 +118,14 @@
 				0E6ED220292EBEF70077AC9C /* Records.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		0E8492EE2933AF1200FD1E17 /* RobotsBattleiPhoneTests */ = {
+			isa = PBXGroup;
+			children = (
+				0E8492EF2933AF1200FD1E17 /* RobotsBattleiPhoneTests.swift */,
+			);
+			path = RobotsBattleiPhoneTests;
 			sourceTree = "<group>";
 		};
 		0EB34B7D292DA43F00E1198F /* RobotsBattleiPhone */ = {
@@ -138,6 +168,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0E8492EC2933AF1200FD1E17 /* RobotsBattleiPhoneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E8492F52933AF1200FD1E17 /* Build configuration list for PBXNativeTarget "RobotsBattleiPhoneTests" */;
+			buildPhases = (
+				0E8492E92933AF1200FD1E17 /* Sources */,
+				0E8492EA2933AF1200FD1E17 /* Frameworks */,
+				0E8492EB2933AF1200FD1E17 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0E8492F22933AF1200FD1E17 /* PBXTargetDependency */,
+			);
+			name = RobotsBattleiPhoneTests;
+			productName = RobotsBattleiPhoneTests;
+			productReference = 0E8492ED2933AF1200FD1E17 /* RobotsBattleiPhoneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		0EB34B7B292DA43E00E1198F /* RobotsBattleiPhone */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0EB34B8F292DA43F00E1198F /* Build configuration list for PBXNativeTarget "RobotsBattleiPhone" */;
@@ -165,6 +213,10 @@
 				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
+					0E8492EC2933AF1200FD1E17 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 0EB34B7B292DA43E00E1198F;
+					};
 					0EB34B7B292DA43E00E1198F = {
 						CreatedOnToolsVersion = 14.1;
 					};
@@ -184,11 +236,19 @@
 			projectRoot = "";
 			targets = (
 				0EB34B7B292DA43E00E1198F /* RobotsBattleiPhone */,
+				0E8492EC2933AF1200FD1E17 /* RobotsBattleiPhoneTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0E8492EB2933AF1200FD1E17 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0EB34B7A292DA43E00E1198F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -203,6 +263,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0E8492E92933AF1200FD1E17 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E8492F02933AF1200FD1E17 /* RobotsBattleiPhoneTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0EB34B78292DA43E00E1198F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -225,6 +293,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0E8492F22933AF1200FD1E17 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0EB34B7B292DA43E00E1198F /* RobotsBattleiPhone */;
+			targetProxy = 0E8492F12933AF1200FD1E17 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0EB34B84292DA43F00E1198F /* Main.storyboard */ = {
@@ -359,6 +435,45 @@
 			};
 			name = Release;
 		};
+		0E8492F32933AF1200FD1E17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.felipeV.robotsbattle.RobotsBattleiPhoneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RobotsBattleiPhone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RobotsBattleiPhone";
+			};
+			name = Debug;
+		};
+		0E8492F42933AF1200FD1E17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.felipeV.robotsbattle.RobotsBattleiPhoneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RobotsBattleiPhone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RobotsBattleiPhone";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		0EB34B8D292DA43F00E1198F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -426,6 +541,15 @@
 			buildConfigurations = (
 				0E72051E292C51F2001E8159 /* Debug */,
 				0E72051F292C51F2001E8159 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E8492F52933AF1200FD1E17 /* Build configuration list for PBXNativeTarget "RobotsBattleiPhoneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E8492F32933AF1200FD1E17 /* Debug */,
+				0E8492F42933AF1200FD1E17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
