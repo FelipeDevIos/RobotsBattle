@@ -2,7 +2,7 @@
 //  BoardViewController+Extensions.swift
 //  RobotsBattleiPhone
 //
-//  Created by Felipe Velandia  on 26/11/22.
+//  Created by Anonymous on 26/11/22.
 //
 
 import Foundation

@@ -2,7 +2,7 @@
 //  Robot.swift
 //  RobotsBattle
 //
-//  Created by X on 21/11/22.
+//  Created by Anonymous on 21/11/22.
 //
 
 import Foundation
