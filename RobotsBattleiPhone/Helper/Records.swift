@@ -21,6 +21,15 @@ struct RobotForMetrics {
     }
 }
 
+enum RecordsKeys: String {
+    case gameResets
+    case gameRounds
+    case prizeRelocations
+    case gameDraws
+    case totalWins
+    case totalSteps
+}
+
 class Records {
     static let shared = Records()
     
@@ -40,6 +49,7 @@ class Records {
         gameResets = 0
         gameDraws = 0
         prizeRelocations = 0
+        gameRounds = 0
     }
     
     /// Sets up the analytics objects
@@ -82,5 +92,24 @@ class Records {
     
     func getGameDraws() -> Int {
         gameDraws
+    }
+    
+    /// Records summary
+    /// - Returns: Key value dictionary
+    func summary() -> [String: Int] {
+        var summary = [String: Int]()
+        
+        summary.updateValue(gameResets, forKey: RecordsKeys.gameResets.rawValue)
+        summary.updateValue(gameRounds, forKey: RecordsKeys.gameRounds.rawValue)
+        summary.updateValue(prizeRelocations, forKey: RecordsKeys.prizeRelocations.rawValue)
+        summary.updateValue(gameDraws, forKey: RecordsKeys.gameDraws.rawValue)
+        
+        summary.updateValue(robot1.totalWins, forKey: "Robot1" + RecordsKeys.totalWins.rawValue)
+        summary.updateValue(robot1.totalSteps, forKey: "Robot1" + RecordsKeys.totalSteps.rawValue)
+        
+        summary.updateValue(robot2.totalWins, forKey: "Robot2" + RecordsKeys.totalWins.rawValue)
+        summary.updateValue(robot2.totalSteps, forKey: "Robot2" + RecordsKeys.totalSteps.rawValue)
+        
+        return summary
     }
 }

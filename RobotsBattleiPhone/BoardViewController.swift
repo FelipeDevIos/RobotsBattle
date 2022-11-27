@@ -51,6 +51,8 @@ class BoardViewController: UIViewController {
         Records.shared.addGameResets()
         
         showScores()
+        
+        print("Reset scores", Records.shared.summary())
     }
     
     /// Requests new loop for game
@@ -59,6 +61,8 @@ class BoardViewController: UIViewController {
         setUpLogic()
         
         Records.shared.addGameRounds()
+        
+        print("New Loop", Records.shared.summary())
     }
     
     /// Relocates the prize
