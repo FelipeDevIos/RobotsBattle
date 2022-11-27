@@ -1,29 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Board View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RobotsBattleiPhone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="BoardViewController" customModule="RobotsBattleiPhone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VeG-dx-gsi">
-                                <rect key="frame" x="146.66666666666666" y="73.666666666666671" width="100" height="100.00000000000001"/>
+                                <rect key="frame" x="250" y="-29.666666666666671" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="cVj-3v-8uH"/>
                                     <constraint firstAttribute="width" secondItem="VeG-dx-gsi" secondAttribute="height" multiplier="1:1" id="d2M-cM-yht"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="u8K-tf-VuT">
-                                <rect key="frame" x="63.333333333333343" y="203.66666666666666" width="266.33333333333326" height="69.666666666666657"/>
+                                <rect key="frame" x="166.99999999999997" y="100.33333333333331" width="266.33333333333326" height="69.666666666666686"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="9Jo-VQ-7vi">
                                         <rect key="frame" x="0.0" y="0.0" width="266.33333333333331" height="34.333333333333336"/>
@@ -51,7 +50,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="mjM-B9-kW7">
-                                        <rect key="frame" x="0.0" y="35.333333333333343" width="266.33333333333331" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="35.333333333333329" width="266.33333333333331" height="34.333333333333329"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mq0-Tn-W5J">
                                                 <rect key="frame" x="0.0" y="0.0" width="132.66666666666666" height="34.333333333333336"/>
@@ -78,7 +77,7 @@
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Yj2-C4-jgT">
-                                <rect key="frame" x="19.666666666666657" y="313.33333333333326" width="353.66666666666674" height="426"/>
+                                <rect key="frame" x="30" y="210" width="540" height="300"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PgJ-Zs-lrS">
                                     <size key="itemSize" width="128" height="128"/>
@@ -89,10 +88,10 @@
                                 <cells/>
                             </collectionView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="apk-Wf-Jl8">
-                                <rect key="frame" x="19.666666666666657" y="749.33333333333337" width="353.66666666666674" height="60"/>
+                                <rect key="frame" x="30" y="520" width="540" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kac-XX-3V8">
-                                        <rect key="frame" x="0.0" y="0.0" width="353.66666666666669" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="540" height="30"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red_robot" translatesAutoresizingMaskIntoConstraints="NO" id="6Ol-yP-hcf">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -102,7 +101,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Wins" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPU-z2-22C">
-                                                <rect key="frame" x="30" y="0.0" width="323.66666666666669" height="30"/>
+                                                <rect key="frame" x="30" y="0.0" width="510" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -110,7 +109,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v5W-v0-YPA">
-                                        <rect key="frame" x="0.0" y="30" width="353.66666666666669" height="30"/>
+                                        <rect key="frame" x="0.0" y="30" width="540" height="30"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue_robot" translatesAutoresizingMaskIntoConstraints="NO" id="n9v-a1-0Mh">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -120,7 +119,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Wins" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8B-7n-GuE">
-                                                <rect key="frame" x="30" y="0.0" width="323.66666666666669" height="30"/>
+                                                <rect key="frame" x="30" y="0.0" width="510" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -147,13 +146,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="blueRobotWins" destination="t8B-7n-GuE" id="Xjs-kt-DoY"/>
+                        <outlet property="blueRobotWinsLabel" destination="t8B-7n-GuE" id="Xjs-kt-DoY"/>
                         <outlet property="collectionView" destination="Yj2-C4-jgT" id="XgB-Iq-3y3"/>
-                        <outlet property="newLoop" destination="bGy-Et-WQg" id="3Km-lS-aRO"/>
-                        <outlet property="pauseGame" destination="tG1-0Z-vlo" id="ida-In-VYB"/>
-                        <outlet property="redRobotWins" destination="MPU-z2-22C" id="6AH-HC-fcY"/>
+                        <outlet property="newLoopButton" destination="bGy-Et-WQg" id="3Km-lS-aRO"/>
+                        <outlet property="pauseGameButton" destination="tG1-0Z-vlo" id="ida-In-VYB"/>
+                        <outlet property="redRobotWinsLabel" destination="MPU-z2-22C" id="6AH-HC-fcY"/>
                         <outlet property="relocatePrizeButton" destination="mq0-Tn-W5J" id="Diy-op-WDA"/>
-                        <outlet property="resetGame" destination="CcD-QN-GUl" id="M7u-YI-6K1"/>
+                        <outlet property="resetGameButton" destination="CcD-QN-GUl" id="M7u-YI-6K1"/>
                         <outlet property="winnerImage" destination="VeG-dx-gsi" id="o4z-I9-oTb"/>
                     </connections>
                 </viewController>

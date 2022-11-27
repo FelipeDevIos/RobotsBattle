@@ -7,16 +7,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    @IBOutlet weak var resetGame: UIButton!
-    @IBOutlet weak var newLoop: UIButton!
+class BoardViewController: UIViewController {
+    @IBOutlet weak var resetGameButton: UIButton!
+    @IBOutlet weak var newLoopButton: UIButton!
     @IBOutlet weak var relocatePrizeButton: UIButton!
-    @IBOutlet weak var pauseGame: UIButton!
+    @IBOutlet weak var pauseGameButton: UIButton!
     @IBOutlet weak var winnerImage: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    @IBOutlet weak var redRobotWins: UILabel!
-    @IBOutlet weak var blueRobotWins: UILabel!
+    @IBOutlet weak var redRobotWinsLabel: UILabel!
+    @IBOutlet weak var blueRobotWinsLabel: UILabel!
     
     var game = Game()
     var timer: Timer?
@@ -49,9 +49,9 @@ class ViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: Constants.timeInterval, target: self, selector: #selector(plays), userInfo: nil, repeats: true)
         winnerImage.image = #imageLiteral(resourceName:  "Playing")
         
-        settingControl(enable: false, newLoop)
+        settingControl(enable: false, newLoopButton)
         settingControl(enable: true, relocatePrizeButton)
-        settingControl(enable: true, pauseGame)
+        settingControl(enable: true, pauseGameButton)
         
         collectionView.reloadData()
     }
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
     @IBAction func resetGameTapped(_ sender: Any) {
         setUpLogic()
         
-        settingControl(enable: true, pauseGame)
+        settingControl(enable: true, pauseGameButton)
         
         Records.shared.restartGame()
         Records.shared.addGameResets()
@@ -83,18 +83,18 @@ class ViewController: UIViewController {
     }
     
     private func showScores() {
-        redRobotWins.text = "\(Records.shared.robot1.totalWins) \(Constants.wins)"
-        blueRobotWins.text = "\(Records.shared.robot2.totalWins) \(Constants.wins)"
+        redRobotWinsLabel.text = "\(Records.shared.robot1.totalWins) \(Constants.wins)"
+        blueRobotWinsLabel.text = "\(Records.shared.robot2.totalWins) \(Constants.wins)"
     }
     
     private func pauseResumeTimer() {
         if timer == nil {
             timer = Timer.scheduledTimer(timeInterval: Constants.timeInterval, target: self, selector: #selector(plays), userInfo: nil, repeats: true)
-            pauseGame.setTitle(Constants.pause, for: .normal)
+            pauseGameButton.setTitle(Constants.pause, for: .normal)
         } else {
             timer?.invalidate()
             timer = nil
-            pauseGame.setTitle(Constants.resume, for: .normal)
+            pauseGameButton.setTitle(Constants.resume, for: .normal)
         }
     }
     
@@ -108,7 +108,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension BoardViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         Constants.rows
     }
@@ -133,7 +133,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     }
 }
 
-extension ViewController {
+extension BoardViewController {
     func createCompositionalLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout {(_, _) -> NSCollectionLayoutSection? in
             let fractionWidth: CGFloat = 1 / CGFloat(Constants.rows)
@@ -160,7 +160,7 @@ extension ViewController {
     }
 }
 
-extension ViewController: UpdateViewStateProtocol {
+extension BoardViewController: UpdateViewStateProtocol {
     func updateBoard() {
         collectionView.reloadData()
     }
@@ -178,18 +178,18 @@ extension ViewController: UpdateViewStateProtocol {
         
         switch button {
         case .newLoop:
-            control = newLoop
+            control = newLoopButton
         case .relocatePrizeButton:
             control = relocatePrizeButton
         case .pauseResume:
-            control = pauseGame
+            control = pauseGameButton
         }
         
         settingControl(enable: enable, control)
     }
 }
 
-extension ViewController: TimeManageProtocol {
+extension BoardViewController: TimeManageProtocol {
     func invalidateTime() {
         timer?.invalidate()
     }

@@ -10,7 +10,7 @@
 		0E6ED221292EBEF70077AC9C /* Records.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6ED220292EBEF70077AC9C /* Records.swift */; };
 		0EB34B7F292DA43F00E1198F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB34B7E292DA43F00E1198F /* AppDelegate.swift */; };
 		0EB34B81292DA43F00E1198F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB34B80292DA43F00E1198F /* SceneDelegate.swift */; };
-		0EB34B83292DA43F00E1198F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB34B82292DA43F00E1198F /* ViewController.swift */; };
+		0EB34B83292DA43F00E1198F /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB34B82292DA43F00E1198F /* BoardViewController.swift */; };
 		0EB34B86292DA43F00E1198F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EB34B84292DA43F00E1198F /* Main.storyboard */; };
 		0EB34B88292DA43F00E1198F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EB34B87292DA43F00E1198F /* Assets.xcassets */; };
 		0EB34B8B292DA43F00E1198F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EB34B89292DA43F00E1198F /* LaunchScreen.storyboard */; };
@@ -36,7 +36,7 @@
 		0EB34B7C292DA43E00E1198F /* RobotsBattleiPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RobotsBattleiPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EB34B7E292DA43F00E1198F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EB34B80292DA43F00E1198F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0EB34B82292DA43F00E1198F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0EB34B82292DA43F00E1198F /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		0EB34B85292DA43F00E1198F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0EB34B87292DA43F00E1198F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EB34B8A292DA43F00E1198F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 				0E720523292C520A001E8159 /* Models */,
 				0EB34B7E292DA43F00E1198F /* AppDelegate.swift */,
 				0EB34B80292DA43F00E1198F /* SceneDelegate.swift */,
-				0EB34B82292DA43F00E1198F /* ViewController.swift */,
+				0EB34B82292DA43F00E1198F /* BoardViewController.swift */,
 				0EB34B84292DA43F00E1198F /* Main.storyboard */,
 				0EB34B87292DA43F00E1198F /* Assets.xcassets */,
 				0EB34B89292DA43F00E1198F /* LaunchScreen.storyboard */,
@@ -196,7 +196,7 @@
 				0EB34B94292DA4B500E1198F /* Prize.swift in Sources */,
 				0EB34B95292DA4BC00E1198F /* Cell.swift in Sources */,
 				0EB34B91292DA4AC00E1198F /* DistanceCalculator.swift in Sources */,
-				0EB34B83292DA43F00E1198F /* ViewController.swift in Sources */,
+				0EB34B83292DA43F00E1198F /* BoardViewController.swift in Sources */,
 				0EB34B93292DA4B200E1198F /* Robot.swift in Sources */,
 				0EB34B9C292DBFA000E1198F /* BattleCell.swift in Sources */,
 				0E6ED221292EBEF70077AC9C /* Records.swift in Sources */,
