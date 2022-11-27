@@ -39,62 +39,95 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5E43C3D7-0FD8-4932-BB5A-1ACD908FD615"
+            uuid = "FFC55384-06E1-4255-82AD-F72F66E93CA2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RobotsBattleiPhoneTests/GameTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "test_ifRobotsCantMoveTheGameIsDraw()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6342CC9E-4E81-4412-BB52-6EFEFF78D5E0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RobotsBattleiPhone/Models/Robot.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "findingBestNextCell(using:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3F583796-7D46-4BDC-B387-DDBA74D8D5A4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RobotsBattleiPhone/Models/Robot.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "nextCells(without:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "78435A76-974C-4999-A03E-FB97339AF372"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RobotsBattleiPhone/Models/Robot.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "nextCells(without:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "5E43C3D7-0FD8-4932-BB5A-1ACD908FD615 - 8b11e778835b8d56"
+                  uuid = "78435A76-974C-4999-A03E-FB97339AF372 - fde37a9f420dbaea"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "RobotsBattleiPhoneTests.GameTests.test_ifRobotsCantMoveTheGameIsDraw() -&gt; ()"
-                  moduleName = "RobotsBattleiPhoneTests"
+                  symbolName = "RobotsBattleiPhone.Robot.nextCells(without: Swift.Array&lt;RobotsBattleiPhone.BattleCell&gt;) -&gt; Swift.Optional&lt;Swift.Array&lt;RobotsBattleiPhone.AvailableCell&gt;&gt;"
+                  moduleName = "RobotsBattleiPhone"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/felipevelandia/Desktop/TRIO%20TECH/RobotsBattle/RobotsBattleiPhoneTests/GameTests.swift"
+                  urlString = "file:///Users/felipevelandia/Desktop/TRIO%20TECH/RobotsBattle/RobotsBattleiPhone/Models/Robot.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78"
-                  offsetFromSymbolStart = "708">
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "724">
                </Location>
                <Location
-                  uuid = "5E43C3D7-0FD8-4932-BB5A-1ACD908FD615 - 8b11e778835b8d56"
+                  uuid = "78435A76-974C-4999-A03E-FB97339AF372 - 7e8ecfd6b33bb459"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "RobotsBattleiPhoneTests.GameTests.test_ifRobotsCantMoveTheGameIsDraw() -&gt; ()"
-                  moduleName = "RobotsBattleiPhoneTests"
+                  symbolName = "closure #3 (RobotsBattleiPhone.BattleCell) -&gt; Swift.Bool in implicit closure #2 () throws -&gt; Swift.Bool in RobotsBattleiPhone.Robot.nextCells(without: Swift.Array&lt;RobotsBattleiPhone.BattleCell&gt;) -&gt; Swift.Optional&lt;Swift.Array&lt;RobotsBattleiPhone.AvailableCell&gt;&gt;"
+                  moduleName = "RobotsBattleiPhone"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/felipevelandia/Desktop/TRIO%20TECH/RobotsBattle/RobotsBattleiPhoneTests/GameTests.swift"
+                  urlString = "file:///Users/felipevelandia/Desktop/TRIO%20TECH/RobotsBattle/RobotsBattleiPhone/Models/Robot.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78"
-                  offsetFromSymbolStart = "616">
-               </Location>
-               <Location
-                  uuid = "5E43C3D7-0FD8-4932-BB5A-1ACD908FD615 - 8b11e778835b8d77"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RobotsBattleiPhoneTests.GameTests.test_ifRobotsCantMoveTheGameIsDraw() -&gt; ()"
-                  moduleName = "RobotsBattleiPhoneTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/felipevelandia/Desktop/TRIO%20TECH/RobotsBattle/RobotsBattleiPhoneTests/GameTests.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
-                  offsetFromSymbolStart = "632">
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "32">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -102,17 +135,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6193128E-44E5-4204-89EA-176502DE2EBA"
+            uuid = "73AF66F5-CF41-42A3-92F4-B874F1041815"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RobotsBattleiPhoneTests/GameTests.swift"
+            filePath = "RobotsBattleiPhone/Models/Robot.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "test_ifRobotsCantMoveTheGameIsDraw()"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "nextCells(without:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "73AF66F5-CF41-42A3-92F4-B874F1041815 - fde37a9f420db9f5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RobotsBattleiPhone.Robot.nextCells(without: Swift.Array&lt;RobotsBattleiPhone.BattleCell&gt;) -&gt; Swift.Optional&lt;Swift.Array&lt;RobotsBattleiPhone.AvailableCell&gt;&gt;"
+                  moduleName = "RobotsBattleiPhone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipevelandia/Desktop/TRIO%20TECH/RobotsBattle/RobotsBattleiPhone/Models/Robot.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "1108">
+               </Location>
+               <Location
+                  uuid = "73AF66F5-CF41-42A3-92F4-B874F1041815 - 83503d451ebda951"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #4 (RobotsBattleiPhone.BattleCell) -&gt; Swift.Bool in implicit closure #3 () throws -&gt; Swift.Bool in RobotsBattleiPhone.Robot.nextCells(without: Swift.Array&lt;RobotsBattleiPhone.BattleCell&gt;) -&gt; Swift.Optional&lt;Swift.Array&lt;RobotsBattleiPhone.AvailableCell&gt;&gt;"
+                  moduleName = "RobotsBattleiPhone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipevelandia/Desktop/TRIO%20TECH/RobotsBattle/RobotsBattleiPhone/Models/Robot.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

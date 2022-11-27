@@ -64,15 +64,17 @@ final class GameTests: XCTestCase {
         let game = Game()
         
         game.robot1?.position = Position(x: 1, y: 1)
-        game.robot2?.position = Position(x: 1, y: 2)
+        game.robot2?.position = Position(x: 7, y: 7)
         
-        game.playedCells = [BattleCell(position: Position(x: 2, y: 1)),
-                            BattleCell(position: Position(x: 2, y: 2)),
-                            BattleCell(position: Position(x: 2, y: 3)),
-                            BattleCell(position: Position(x: 1, y: 3))]
+        let playedCells = [BattleCell(position: Position(x: 2, y: 1)),
+                           BattleCell(position: Position(x: 2, y: 2)),
+                           BattleCell(position: Position(x: 1, y: 2)),
+                           BattleCell(position: Position(x: 6, y: 6)),
+                           BattleCell(position: Position(x: 6, y: 7)),
+                           BattleCell(position: Position(x: 7, y: 6))]
         
-        game.plays()
-        game.plays()
+        game.playedCells.append(contentsOf: playedCells)
+        
         game.plays()
         game.plays()
         
